@@ -1,0 +1,46 @@
+.product-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 1px solid var(--color-border); /* В каталоге добавил рамку для четкости */
+    padding: 15px;
+}
+
+.product-card__img-placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--color-placeholder);
+    position: relative;
+}
+
+.wishlist-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-card__title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.product-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid var(--color-border);
+}
+
+.product-card__price {
+    font-weight: 700;
+    font-size: 16px;
+}

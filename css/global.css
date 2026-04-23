@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Цветовая палитра */
+    --color-primary: #FF6600;      /* Оранжевый акцент */
+    --color-bg: #FFFFFF;           /* Основной фон */
+    --color-bg-alt: #E8E8E8;       /* Фон hero секции */
+    --color-text-main: #000000;    /* Основной текст */
+    --color-text-muted: #666666;   /* Второстепенный текст */
+    --color-placeholder: #D9D9D9;  /* Цвет заглушек для фото */
+    --color-dark: #2B2B2B;         /* Темные элементы (кнопки, плашки) */
+    --color-border: #E0E0E0;
+
+    /* Шрифты */
+    --font-main: 'Inter', sans-serif;
+
+    /* Отступы */
+    --container-width: 1400px;
+    --container-padding: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-text-main);
+    background-color: var(--color-bg);
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    background: none;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Общие компоненты */
+.btn {
+    padding: 10px 24px;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: opacity 0.2s ease;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn--primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn--outline {
+    background-color: transparent;
+    border: 1px solid var(--color-text-main);
+    color: var(--color-text-main);
+}
+
+.btn--small {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 60px 0 40px;
+    text-transform: uppercase;
+}
+
+.section-title--left {
+    text-align: left;
+}
+
+.tag, .tag-small {
+    background-color: var(--color-dark);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.tag-small {
+    background-color: #A0A0A0; /* Более светлый серый для мелких тегов */
+    padding: 4px 10px;
+    font-size: 12px;
+}

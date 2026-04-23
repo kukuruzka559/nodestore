@@ -1,0 +1,156 @@
+.profile-page {
+    padding: 60px 0;
+    background-color: var(--color-bg);
+}
+
+.profile-title {
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+/* Основной контейнер на флексах */
+.profile-flex-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* Общие стили для колонок */
+.profile-col {
+    flex: 1; /* Все колонки равны по ширине */
+    background-color: var(--color-bg-alt);
+    padding: 25px;
+    border-radius: 8px;
+    min-height: 600px;
+}
+
+.col-title {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--color-border);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Стили для заказов (1 колонка) */
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.order-item {
+    background: var(--color-bg);
+    padding: 15px;
+    border-left: 4px solid var(--color-primary);
+}
+
+.order-item__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.order-number {
+    font-weight: 400;
+}
+
+.order-status {
+    font-size: 12px;
+    color: #27ae60; /* Зеленый для завершенных */
+    background: #e8f5e9;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.order-price {
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+/* Стили для товаров в профиле (2 и 3 колонки) */
+.profile-products {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Переопределяем некоторые стили карточки для узкой колонки */
+.wishlist-col .product-card {
+    background: var(--color-bg);
+    padding: 10px;
+}
+
+/* Стили корзины (3 колонка) */
+.cart-item {
+    display: flex;
+    gap: 15px;
+    background: var(--color-bg);
+    padding: 15px;
+    position: relative;
+}
+
+.cart-item__img {
+    width: 70px;
+    height: 70px;
+    background-color: var(--color-placeholder);
+}
+
+.cart-item__details {
+    flex: 1;
+}
+
+.cart-item__name {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.cart-item__price {
+    font-weight: 400;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+}
+
+.cart-item__counter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-item__counter button {
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-item__remove {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: var(--color-text-muted);
+}
+
+.cart-total {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px dashed var(--color-border);
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.total-price {
+    color: var(--color-primary);
+}

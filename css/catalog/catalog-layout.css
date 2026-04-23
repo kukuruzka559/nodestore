@@ -1,0 +1,34 @@
+.catalog-wrapper {
+    display: grid;
+    grid-template-columns: 280px 1fr; /* Фиксированная ширина сайдбара */
+    gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+.catalog-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.results-count {
+    font-size: 14px;
+    color: var(--color-text-muted);
+}
+
+.sorting {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.sorting select {
+    padding: 5px;
+    border: 1px solid var(--color-border);
+    outline: none;
+}

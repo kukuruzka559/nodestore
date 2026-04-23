@@ -1,0 +1,27 @@
+.categories-nav {
+    background-color: var(--color-bg-alt);
+    border-bottom: 1px solid var(--color-border);
+    padding: 15px 0;
+}
+
+.categories-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    overflow-x: auto; /* На случай, если категорий будет много */
+}
+
+.cat-item {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    padding: 5px 10px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.cat-item:hover, .cat-item.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
