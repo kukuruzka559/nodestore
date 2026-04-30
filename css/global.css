@@ -49,16 +49,16 @@ button {
 }
 
 .container {
-    max-width: var(--container-width);
+    /*max-width: var(--container-width);*/
     margin: 0 auto;
     padding: 0 var(--container-padding);
 }
 
 /* Общие компоненты */
 .btn {
-    padding: 10px 24px;
-    font-weight: 500;
-    border-radius: 4px;
+    padding: 20px 40px;
+    /*font-weight: 500;*/
+    /*border-radius: 4px;*/
     transition: opacity 0.2s ease;
 }
 
@@ -66,12 +66,23 @@ button {
     opacity: 0.8;
 }
 
+.btn--header{
+    font-size: 16px;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 10px 16px;
+}
+
 .btn--primary {
     background-color: var(--color-primary);
     color: white;
+    font-size: 24px;
+    font-weight: 300;
 }
 
 .btn--outline {
+    font-size: 24px;
+    font-weight: 300;
     background-color: transparent;
     border: 1px solid var(--color-text-main);
     color: var(--color-text-main);
@@ -81,6 +92,50 @@ button {
     padding: 8px 16px;
     font-size: 14px;
 }
+
+.wishlist-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Анимация для сердечка */
+.wishlist-btn {
+    transition: all 0.2s ease;
+    cursor: pointer;
+    color: #999; /* Серый цвет по умолчанию */
+}
+
+/* Состояние, когда товар в избранном (красное закрашенное сердце) */
+.wishlist-btn.active {
+    color: #e74c3c;
+}
+
+/* Анимация для кнопки корзины */
+.add-to-cart-btn {
+    transition: background-color 0.3s ease;
+}
+
+/* Состояние, когда товар успешно добавлен */
+.add-to-cart-btn.added {
+    background-color: #4c4c4c !important; /* Зеленый цвет успеха */
+    color: white;
+}
+
+
+
+
+
+
 
 .section-title {
     text-align: center;

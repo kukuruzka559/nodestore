@@ -1,0 +1,70 @@
+/* Чекбоксы и выделение всех */
+.select-all-wrapper {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    font-weight: bold;
+}
+.select-all-wrapper label { cursor: pointer; display: flex; align-items: center; gap: 8px;}
+
+/* Позиционирование чекбоксов в карточках */
+.cart-item { position: relative; padding-left: 30px; }
+.cart-checkbox {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px; height: 18px;
+    cursor: pointer;
+}
+
+.fav-item {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.card-checkbox-wrapper {
+    position: absolute;
+    top: 10px; left: 10px;
+    z-index: 10;
+}
+.fav-checkbox { width: 18px; height: 18px; cursor: pointer; }
+
+/* Кнопки +/- в корзине */
+.count-btn {
+    width: 25px; height: 25px;
+    border: 1px solid #ccc;
+    background: #fff; cursor: pointer;
+    font-weight: bold;
+}
+.item-count { margin: 0 10px; font-weight: bold;}
+
+/* Кнопка удаления заказа */
+.delete-order-btn {
+    background: none; border: none; font-size: 18px; cursor: pointer; opacity: 0.5; transition: 0.2s;
+}
+.delete-order-btn:hover { opacity: 1; color: red; }
+
+/* Всплывающее окно (Toast) внизу экрана */
+#toast-container {
+    position: fixed; bottom: 20px; right: 20px;
+    display: flex; flex-direction: column; gap: 10px; z-index: 9999;
+}
+.toast {
+    background: #333; color: #fff; padding: 15px 20px;
+    border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex; align-items: center; gap: 15px;
+    animation: slideIn 0.3s ease forwards;
+}
+.toast .undo-btn {
+    background: transparent; border: 1px solid #fff; color: #fff;
+    padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px;
+}
+.toast .undo-btn:hover { background: #fff; color: #333; }
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}

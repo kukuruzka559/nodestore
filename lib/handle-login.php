@@ -25,9 +25,9 @@ else {
 //    $sql = "SELECT first username FROM `users` WHERE `email` = ? AND `password` = ?";
 //    $stmt = $pdo->prepare($sql);
 //    $stmt->execute([$email, $password]);
-    setcookie("username", $email, time() + (60 * 60 * 24 * 30), "/");
+    setcookie("email", $email, time() + (60 * 60 * 24 * 30), "/");
 
-    header("Location: /user.php");
+    header("Location: /profile.php");
 }
 
 

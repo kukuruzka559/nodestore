@@ -15,14 +15,15 @@
         </nav>
         <div class="header__actions">
             <?php
-                if(isset($_COOKIE['username'])){
+                if(isset($_COOKIE['email'])){
+                    echo '<a href="../admin/index.php"><button class="icon-btn">Админ-панель</button></a>';
                     echo '<button class="icon-btn">🛒</button>';
                     echo '<button class="icon-btn">♡</button>';
-                  echo  '<a href="/login.php"><button class="btn btn--primary">👤 Личный кабинет</button></a>';
+                  echo  '<a href="/profile.php"><button class="btn btn--header">👤 Личный кабинет</button></a>';
                 }
                 else{
-                    echo '<a href="/login.php"><button class="btn btn--primary">Войти</button></a>';
-                    echo '<a href="/register.php"><button class="btn">Зарегистрироватся</button></a>';
+                    echo '<a href="/login.php"><button class="btn btn--header">Войти</button></a>';
+                    echo '<a href="/register.php"><button class="btn btn--header">Зарегистрироватся</button></a>';
                 }
             ?>
         </div>

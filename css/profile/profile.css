@@ -5,7 +5,7 @@
 
 .profile-title {
     font-size: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     font-weight: 400;
 }
 
@@ -82,6 +82,7 @@
 .wishlist-col .product-card {
     background: var(--color-bg);
     padding: 10px;
+    position: relative;
 }
 
 /* Стили корзины (3 колонка) */
@@ -153,4 +154,22 @@
 
 .total-price {
     color: var(--color-primary);
+}
+
+.profile-header-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.btn--outline {
+    background: transparent;
+    border: 1px solid #e74c3c;
+    color: #e74c3c;
+    transition: all 0.3s ease;
+}
+
+.btn--outline:hover {
+    background: #e74c3c;
+    color: #fff;
 }

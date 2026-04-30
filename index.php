@@ -12,12 +12,25 @@
     <link rel="stylesheet" href="css/workspace.css">
     <link rel="stylesheet" href="css/sponsors.css">
     <link rel="stylesheet" href="css/footer.css">
+
+
+    <script src="js/favorites.js" defer></script>
+    <script src="js/cart.js" defer></script>
 </head>
 <body>
     <?PHP require_once 'blocks/header.php'; ?>
 
+
+
+
     <main>
-        <section class="hero">
+
+        <?PHP
+        require_once 'lib/db.php';
+
+//        style="background: url(\'img/'.$workspaceprods1->img.'\') no-repeat center / contain;"
+        ?>
+        <section class="hero" style="background: url(img/frame1.png) no-repeat center / cover;">
             <div class="container hero__inner">
                 <div class="hero__content">
                     <h1 class="hero__title">NOTHING PHONE 4A PRO</h1>
@@ -69,7 +82,7 @@
                             echo '
                                 <article class="product-card">
                                     <div class="product-card__img-placeholder" style="background: url(\'img/'.$prod->img.'\') no-repeat center / contain;">
-                                        <button class="wishlist-btn">♡</button>
+                                        <button class="wishlist-btn" data-id="'.$prod->id.'">♡</button>
                                     </div>
                                     <h3 class="product-card__title"> '.$prod->productname.' </h3>
                                     <div class="product-card__tags">
@@ -79,7 +92,7 @@
                                     </div>
                                     <div class="product-card__footer">
                                         <span class="product-card__price">'.$prod->price.' р.</span>
-                                        <button class="btn btn--primary btn--small">В корзину</button>
+                                        <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
                                     </div>
                                 </article>
                             
@@ -87,53 +100,6 @@
                         }
                     ?>
 
-
-
-
-                    <!--<article class="product-card">
-                        <div class="product-card__img-placeholder">
-                            <button class="wishlist-btn">♡</button>
-                        </div>
-                        <h3 class="product-card__title">Lorem ipsum</h3>
-                        <div class="product-card__tags">
-                            <span class="tag-small">Tag 1</span>
-                            <span class="tag-small">Tag 2</span>
-                        </div>
-                        <div class="product-card__footer">
-                            <span class="product-card__price">$1,199.00</span>
-                            <button class="btn btn--primary btn--small">Купить в 1 клик</button>
-                        </div>
-                    </article>
-
-                    <article class="product-card">
-                        <div class="product-card__img-placeholder">
-                            <button class="wishlist-btn">♡</button>
-                        </div>
-                        <h3 class="product-card__title">Lorem ipsum</h3>
-                        <div class="product-card__tags">
-                            <span class="tag-small">Tag 1</span>
-                            <span class="tag-small">Tag 2</span>
-                        </div>
-                        <div class="product-card__footer">
-                            <span class="product-card__price">$1,199.00</span>
-                            <button class="btn btn--primary btn--small">Купить в 1 клик</button>
-                        </div>
-                    </article>
-
-                    <article class="product-card">
-                        <div class="product-card__img-placeholder">
-                            <button class="wishlist-btn">♡</button>
-                        </div>
-                        <h3 class="product-card__title">Lorem ipsum</h3>
-                        <div class="product-card__tags">
-                            <span class="tag-small">Tag 1</span>
-                            <span class="tag-small">Tag 2</span>
-                        </div>
-                        <div class="product-card__footer">
-                            <span class="product-card__price">$1,199.00</span>
-                            <button class="btn btn--primary btn--small">Купить в 1 клик</button>
-                        </div>
-                    </article>-->
                 </div>
             </div>
         </section>
@@ -181,68 +147,117 @@
 
 
                         echo '
-                         <div class="workspace-grid">    
-                            <div class="workspace-item workspace-item--large">
-                                <div class="workspace-item__img-placeholder large-img" style="background: url(\'img/'.$workspaceprods1->img.'\') no-repeat center / contain;">
-                                    <button class="wishlist-btn">♡</button>
+                         <div class="workspace-grid"> 
+                            
+                            <div class="workspace-item">
+                                <div class="workspace-item__img-placeholder" style="background: url(\'img/'.$workspaceprods1->img.'\') no-repeat center / contain;">
+                                    <button class="wishlist-btn" data-id="'.$prod->id.'">♡</button>
                                 </div>
                                 <h3 class="workspace-item__title">'.$workspaceprods1->productname.'</h3>
                                 <div class="product-card__tags">
                                     <span class="tag-small">'.$workspaceprods1->tags.'</span>
-                                    <!--<span class="tag-small">Tag 2</span>-->
+                                  
                                 </div>
                                 <div class="product-card__footer">
                                     <span class="product-card__price">'.$workspaceprods1->price.'</span>
-                                    <button class="btn btn--primary btn--small">Купить в 1 клик</button>
+                                    <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
+                                </div>
+                            </div>
+                            
+                            <div class="workspace-item">
+                                <div class="workspace-item__img-placeholder" style="background: url(\'img/'.$workspaceprods2->img.'\') no-repeat center / contain;">
+                                    <button class="wishlist-btn" data-id="'.$prod->id.'">♡</button>
+                                </div>
+                                <h3 class="workspace-item__title">'.$workspaceprods2->productname.'</h3>
+                                <div class="product-card__tags">
+                                    <span class="tag-small">'.$workspaceprods2->tags.'</span>
+                                    
+                                </div>
+                                <div class="product-card__footer">
+                                    <span class="product-card__price">'.$workspaceprods2->price.'</span>
+                                    <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
+                                </div>
+                            </div>
+                            
+                            <div class="workspace-item">
+                                <div class="workspace-item__img-placeholder" style="background: url(\'img/'.$workspaceprods3->img.'\') no-repeat center / contain;">
+                                    <button class="wishlist-btn" data-id="'.$prod->id.'">♡</button>
+                                </div>
+                                <h3 class="workspace-item__title">'.$workspaceprods3->productname.'</h3>
+                                <div class="product-card__tags">
+                                    <span class="tag-small">'.$workspaceprods3->tags.'</span>
+                                    
+                                </div>
+                                <div class="product-card__footer">
+                                    <span class="product-card__price">'.$workspaceprods3->price.'</span>
+                                    <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
+                                </div>
+                            </div>
+                            
+                            <div class="workspace-item">
+                                <div class="workspace-item__img-placeholder" style="background: url(\'img/'.$workspaceprods4->img.'\') no-repeat center / contain;">
+                                    <button class="wishlist-btn" data-id="'.$prod->id.'">♡</button>
+                                </div>
+                                <h3 class="workspace-item__title">'.$workspaceprods4->productname.'</h3>
+                                <div class="product-card__tags">
+                                    <span class="tag-small">'.$workspaceprods4->tags.'</span>
+                                    
+                                </div>
+                                <div class="product-card__footer">
+                                    <span class="product-card__price">'.$workspaceprods4->price.'</span>
+                                    <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
+                                </div>
+                            </div>
+                            
+                            <div class="workspace-item">
+                                <div class="workspace-item__img-placeholder" style="background: url(\'img/'.$workspaceprods5->img.'\') no-repeat center / contain;">
+                                    <button class="wishlist-btn" data-id="'.$prod->id.'">♡</button>
+                                </div>
+                                <h3 class="workspace-item__title">'.$workspaceprods5->productname.'</h3>
+                                <div class="product-card__tags">
+                                    <span class="tag-small">'.$workspaceprods5->tags.'</span>
+                                    
+                                </div>
+                                <div class="product-card__footer">
+                                    <span class="product-card__price">'.$workspaceprods5->price.'</span>
+                                    <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
                                 </div>
                             </div>
                             
                             
-                            <div class="workspace-item__stacked">
-                                <div class="workspace-item">
-                                    <div class="workspace-item__img-placeholder" style="background: url(\'img/'.$workspaceprods2->img.'\') no-repeat center / contain;">
-                                        <button class="wishlist-btn">♡</button>
-                                    </div>
-                                    <div class="product-card__footer">
-                                        <span class="product-card__price">'.$workspaceprods2->price.'</span>
-                                        <button class="btn btn--primary btn--small">Купить в 1 клик</button>
-                                    </div>
+                            <div class="workspace-item">
+                                <div class="workspace-item__img-placeholder" style="background: url(\'img/'.$workspaceprods5->img.'\') no-repeat center / contain;">
+                                    <button class="wishlist-btn" data-id="'.$prod->id.'">♡</button>
                                 </div>
-                                <div class="workspace-item">
-                                    <div class="workspace-item__img-placeholder" style="background: url(\'img/'.$workspaceprods3->img.'\') no-repeat center / contain;">
-                                        <button class="wishlist-btn">♡</button>
-                                    </div>
-                                    <div class="product-card__footer">
-                                        <span class="product-card__price">'.$workspaceprods3->price.'</span>
-                                        <button class="btn btn--primary btn--small">Купить в 1 клик</button>
-                                    </div>
+                                <h3 class="workspace-item__title">'.$workspaceprods5->productname.'</h3>
+                                <div class="product-card__tags">
+                                    <span class="tag-small">'.$workspaceprods5->tags.'</span>
+                                    
+                                </div>
+                                <div class="product-card__footer">
+                                    <span class="product-card__price">'.$workspaceprods5->price.'</span>
+                                    <button class="btn btn--primary btn--small">В корзину</button>
                                 </div>
                             </div>
-                        </div>
+                            
+                            <div class="workspace-item">
+                                <div class="workspace-item__img-placeholder" style="background: url(\'img/'.$workspaceprods1->img.'\') no-repeat center / contain;">
+                                    <button class="wishlist-btn" data-id="'.$prod->id.'">♡</button>
+                                </div>
+                                <h3 class="workspace-item__title">'.$workspaceprods1->productname.'</h3>
+                                <div class="product-card__tags">
+                                    <span class="tag-small">'.$workspaceprods1->tags.'</span>
+                                    
+                                </div>
+                                <div class="product-card__footer">
+                                    <span class="product-card__price">'.$workspaceprods1->price.'</span>
+                                    <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
+                                </div>
+                            </div>
                             
                             
                             
-                            
-                <div class="workspace-grid workspace-grid--bottom">
-                    <div class="workspace-item">
-                        <div class="workspace-item__img-placeholder" style="background: url(\'img/'.$workspaceprods4->img.'\') no-repeat center / contain;">
-                            <button class="wishlist-btn">♡</button>
-                        </div>
-                        <div class="product-card__footer">
-                            <span class="product-card__price">'.$workspaceprods4->price.'</span>
-                            <button class="btn btn--primary btn--small">Купить в 1 клик</button>
-                        </div>
-                    </div>
-                    <div class="workspace-item">
-                        <div class="workspace-item__img-placeholder" style="background: url(\'img/'.$workspaceprods5->img.'\') no-repeat center / contain;">
-                            <button class="wishlist-btn">♡</button>
-                        </div>
-                        <div class="product-card__footer">
-                            <span class="product-card__price">'.$workspaceprods4->price.'</span>
-                            <button class="btn btn--primary btn--small">Купить в 1 клик</button>
-                        </div>
-                    </div>
-                </div>                
+                        </div>        
                             ';
 
                     ?>

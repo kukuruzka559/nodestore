@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="css/workspace.css">
     <link rel="stylesheet" href="css/sponsors.css">
     <link rel="stylesheet" href="css/footer.css">
+
+    <script src="js/favorites.js" defer></script>
+    <script src="js/cart.js" defer></script>
 </head>
 <body>
 <?php include 'blocks/header.php'; ?>
@@ -107,7 +110,7 @@
                 --><?php /*endfor; */?>
 
                 <?php
-                    for ($i = 1; $i <= 2; $i++) {
+//                    for ($i = 1; $i <= 2; $i++) {
                         require_once 'lib/db.php';
                         $sql = 'SELECT * FROM products ORDER BY id';
                         $query = $pdo->prepare($sql);
@@ -118,7 +121,7 @@
                             '
                                 <article class="product-card">
                                     <div class="product-card__img-placeholder" style="background: url(\'img/'.$prod->img.'\') no-repeat center / contain;">
-                                        <button class="wishlist-btn">♡</button>
+                                        <button class="wishlist-btn" data-id="'.$prod->id.'">♡</button>
                                     </div>
                                     <h3 class="product-card__title">'.$prod->name.'</h3>
                                     <div class="product-card__tags">
@@ -127,14 +130,14 @@
                                     </div>
                                     <div class="product-card__footer">
                                         <span class="product-card__price">'.$prod->price.'</span>
-                                        <button class="btn btn--primary btn--small">В корзину</button>
+                                        <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
                                     </div>
                                 </article>
                             
                             
                             ';
                         }
-                    }
+//                    }
 
                 ?>
             </div>
