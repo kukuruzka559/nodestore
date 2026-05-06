@@ -1,24 +1,95 @@
 .top-products {
-    padding-bottom: 60px;
+    padding: 30px 0px;
+    margin: 80px 0px 80px 0px;
+    position: relative;
 }
 
 .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
+
+    display: inline-flex;    /* строчный flex */
+    /*grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));*/
+    /*grid-template-columns: repeat(auto-fill, 500px);*/
+    /*grid-template-rows: 500px;*/
+    flex-direction: row;
+    /*flex-wrap: nowrap;*/
+    gap: -1px;
+
+    flex-wrap: nowrap;       /* без переноса (по умолчанию) */
+    justify-content: flex-start;    /* в начало (по умолчанию) */
+    flex-grow: 0;   /* не растягивается (по умолчанию) */
+    flex-shrink: 0;   /* не сжимается */
+
+    background: var(--color-bg);
+
 }
 
 .product-card {
+    /*width: auto;*/
+    /*height: auto;*/
+    width: 500px;
+    height: 600px;
+    position: relative;
+    padding: 20px;
+    border: 1px solid var(--color-border);
+
+}
+
+.pc_logic{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pc_logic2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pc_logic3{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-wraper{
+    width: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    right: 20px;
+    justify-content: space-between;
+    z-index: 2;
+
 }
 
 .product-card__img-placeholder {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background-color: var(--color-placeholder);
-    position: relative;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    right: 20px;
+    /*width: auto;*/
+    /*aspect-ratio: 1 / 1;*/
+
+    /*background-color: var(--color-placeholder);*/
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*position: relative;*/
+
+}
+
+.product-card__img-placeholder img{
+    height: 70%;
+    /*position: absolute;*/
+
 }
 
 
@@ -30,7 +101,12 @@
 
 .product-card__tags {
     display: flex;
-    gap: 5px;
+    gap: -3px;
+
+}
+
+.add-to-cart-btn{
+    border-radius: 100px;
 }
 
 .product-card__footer {
@@ -38,7 +114,7 @@
     justify-content: space-between;
     align-items: center;
     margin-top: auto;
-    border-top: 1px solid var(--color-border);
+    /*border-top: 1px solid var(--color-border);*/
     padding-top: 15px;
 }
 

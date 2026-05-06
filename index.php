@@ -30,75 +30,299 @@
 
 //        style="background: url(\'img/'.$workspaceprods1->img.'\') no-repeat center / contain;"
         ?>
-        <section class="hero" style="background: url(img/frame1.png) no-repeat center / cover;">
+        <section class="hero" style="background: url(backgrounds/bg.png) no-repeat center / cover;">
             <div class="container hero__inner">
                 <div class="hero__content">
-                    <h1 class="hero__title">NOTHING PHONE 4A PRO</h1>
-                    <p class="hero__desc">Lorem ipsum dolor sit amet consectetur. Egestas sem dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.</p>
-                    <div class="hero__tags">
-                        <span class="tag">Lorem ipsum</span>
-                        <span class="tag">Lorem ipsum</span>
-                        <span class="tag">Lorem ipsum</span>
-                        <span class="tag">Lorem ipsum</span>
-                        <span class="tag">Lorem ipsum</span>
-                        <span class="tag">Lorem ipsum</span>
-                        <span class="tag">Lorem ipsum</span>
-                    </div>
+                        <div class="hero3">
+                            <div class="hero2">
+                                <div class="hero1">
+                                    <h1 class="hero__title">NOTHING PHONE 4A PRO</h1>
+                                    <p class="hero__desc">Lorem ipsum dolor sit amet consectetur. Egestas sem dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.</p>
+                                </div>
+                                <div class="hero__tags">
+                                    <span class="tag">Lorem ipsum</span>
+                                    <span class="tag">Lorem ipsum</span>
+                                    <span class="tag">Lorem ipsum</span>
+                                    <span class="tag">Lorem ipsum</span>
+                                    <span class="tag">Lorem ipsum</span>
+                                    <span class="tag">Lorem ipsum</span>
+                                    <span class="tag">Lorem ipsum</span>
+                                </div>
+                            </div>
+
+                            <!--                        <span class="divider"> </span>-->
+                            <div class="divider"></div>
+
+                            <div class="hero4">
+                                Обзоры
+                                <div class="hero__videos">
+                                    <div class="video-thumb">
+                                        <div class="preview" style="background: url(backgrounds/Rectangle.png) no-repeat center / cover;">
+                                            <img src="icons/play.svg">
+                                            <div class="youtube"><img src="icons/youtube.png" style="width: 10px; height: 10px;">YouTube</div>
+                                        </div>
+
+                                        <div class="descr">
+                                            <div class="name">🔥 СМАРТФОН Nothing Phone (4a)</div>
+                                            <div class="auth"><img src="icons/Ellipse.png" >Польза NET</div>
+                                        </div>
+                                    </div>
+                                    <div class="video-thumb">
+                                        <div class="preview" style="background: url(backgrounds/Rectangle.png) no-repeat center / cover;">
+                                            <img src="icons/play.svg">
+                                            <div class="youtube"><img src="icons/youtube.png" style="width: 10px; height: 10px;">YouTube</div>
+                                        </div>
+
+                                        <div class="descr">
+                                            <div class="name">🔥 СМАРТФОН Nothing Phone (4a)</div>
+                                            <div class="auth"><img src="icons/Ellipse.png" >Польза NET</div>
+                                        </div>
+                                    </div>
+                                    <div class="video-thumb">
+                                        <div class="preview" style="background: url(backgrounds/Rectangle.png) no-repeat center / cover;">
+                                            <img src="icons/play.svg">
+                                            <div class="youtube"><img src="icons/youtube.png" style="width: 10px; height: 10px;">YouTube</div>
+                                        </div>
+
+                                        <div class="descr">
+                                            <div class="name">🔥 СМАРТФОН Nothing Phone (4a)</div>
+                                            <div class="auth"><img src="icons/Ellipse.png" >Польза NET</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="hero__cta">
+                            <button class="btn btn--outline" style="color: var(--color-bg); border-color: var(--color-bg); border-radius: 100px; width: 310px">Каталог</button>
+                            <button class="btn btn--primary" style="border-radius: 100px;">Перейти к товару</button>
+                        </div>
                 </div>
 
-                <div class="hero__bottom">
-                    <div class="hero__videos">
-                        <div class="video-thumb"><span>▶ Смотреть</span></div>
-                        <div class="video-thumb"><span>▶ Смотреть</span></div>
-                        <div class="video-thumb"><span>▶ Смотреть</span></div>
-                    </div>
-                    <div class="hero__cta">
-                        <button class="btn btn--outline">Каталог</button>
-                        <button class="btn btn--primary">Перейти к товару</button>
-                    </div>
+<!--                <div class="hero__bottom">-->
+                <div class="hero__img">
+                    <img src="backgrounds/mobila.png">
+                </div>
+
                 </div>
             </div>
         </section>
 
+
+        <span class="line-left"></span>
+        <span class="line-right"></span>
+        <span class="line-bot"></span>
+        <span class="line-top"></span>
+
+<!--        <div class="lines">-->
+<!--            -->
+<!--            -->
+<!--            -->
+<!--            -->
+<!--            -->
+<!--        </div>-->
+
         <section class="top-products">
+            <span class="line-bot"></span>
+            <span class="line-top"></span>
+            <img class="plus-left" src="icons/plus.svg">
+            <img class="plus-right" src="icons/plus.svg">
+            <img class="plus-bot-left" src="icons/plus.svg">
+            <img class="plus-bot-right" src="icons/plus.svg">
             <div class="container">
                 <h2 class="section-title">ТОП ТОВАРОВ</h2>
                 <div class="products-grid">
 
-                    <?php
-                        require_once 'lib/db.php';
+<!--                    --><?php
+//                        require_once 'lib/db.php';
+//
+////                        $sql = 'SELECT * FROM trending ORDER BY id DESC LIMIT 4';
+//                    $sql = 'SELECT * FROM trending ORDER BY id LIMIT 4';
+//
+//
+//
+//                        $query = $pdo->prepare($sql);
+//                        $query->execute();
+//                        $trendprod = $query->fetchAll(PDO::FETCH_OBJ);
+//
+//                        /*print_r($trendprod);*/
+//                        foreach ($trendprod as $prod) {
+//                            echo '
+//                                <article class="product-card">
+//                                    <div class="product-card__img-placeholder" style="background: url(\'img/'.$prod->img.'\') no-repeat center / contain;">
+//                                        <button class="wishlist-btn" data-id="'.$prod->id.'">♡</button>
+//                                    </div>
+//                                    <h3 class="product-card__title"> '.$prod->productname.' </h3>
+//                                    <div class="product-card__tags">
+//                                        <!--<span class="tag-small"></span>-->
+//                                        <span class="tag-small">'.$prod->tags.'</span>
+//                                        <!--span class="tag-small">Tag 3</span>-->
+//                                    </div>
+//                                    <div class="product-card__footer">
+//                                        <span class="product-card__price">'.$prod->price.' р.</span>
+//                                        <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
+//                                    </div>
+//                                </article>
+//
+//                            ';
+//                        }
+//                    ?>
 
-//                        $sql = 'SELECT * FROM trending ORDER BY id DESC LIMIT 4';
-                    $sql = 'SELECT * FROM trending ORDER BY id LIMIT 4';
+                    <article class="product-card">
+                        <div class="card-wraper">
+                            <div class="pc_logic">
+                                смартфон
+                                <button class="wishlist-btn"><img src="icons/Like.svg"></button>
+                            </div>
+                            <div class="pc_logic3">
+                                <div class="pc_logic2">
+                                    <h3 class="product-card__title">Apple Iphone 17 pro max</h3>
+                                    <span class="product-card__price">4000 р.</span>
+                                </div>
 
 
-
-                        $query = $pdo->prepare($sql);
-                        $query->execute();
-                        $trendprod = $query->fetchAll(PDO::FETCH_OBJ);
-
-                        /*print_r($trendprod);*/
-                        foreach ($trendprod as $prod) {
-                            echo '
-                                <article class="product-card">
-                                    <div class="product-card__img-placeholder" style="background: url(\'img/'.$prod->img.'\') no-repeat center / contain;">
-                                        <button class="wishlist-btn" data-id="'.$prod->id.'">♡</button>
-                                    </div>
-                                    <h3 class="product-card__title"> '.$prod->productname.' </h3>
+                                <div class="product-card__footer">
                                     <div class="product-card__tags">
-                                        <!--<span class="tag-small"></span>-->
-                                        <span class="tag-small">'.$prod->tags.'</span>
-                                        <!--span class="tag-small">Tag 3</span>-->
+                                        <span class="tag-small">x8 zoom</span>
+                                        <span class="tag-small">120 гц</span>
+                                        <span class="tag-small">Tag 3</span>
                                     </div>
-                                    <div class="product-card__footer">
-                                        <span class="product-card__price">'.$prod->price.' р.</span>
-                                        <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
+                                    <button class="btn btn--primary btn--small add-to-cart-btn">В корзину</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card__img-placeholder">
+                            <img src="img/apple.webp">
+                        </div>
+                        <!--<div class="product-card__img-placeholder" style="background: url('img/apple.webp') no-repeat center / contain;"></div>-->
+                    </article>
+
+                    <article class="product-card">
+                        <!--<img class="plus-left" src="icons/plus.svg">
+                        <img class="plus-right" src="icons/plus.svg">
+                        <img class="plus-bot-left" src="icons/plus.svg">
+                        <img class="plus-bot-right" src="icons/plus.svg">-->
+                        <div class="card-wraper">
+
+                            <div class="pc_logic">
+                                смартфон
+                                <button class="wishlist-btn"><img src="icons/Like.svg"></button>
+                            </div>
+                            <div class="pc_logic3">
+                                <div class="pc_logic2">
+                                    <h3 class="product-card__title">Apple Iphone 17 pro max</h3>
+                                    <span class="product-card__price">4000 р.</span>
+                                </div>
+
+
+                                <div class="product-card__footer">
+                                    <div class="product-card__tags">
+                                        <span class="tag-small">x8 zoom</span>
+                                        <span class="tag-small">120 гц</span>
+                                        <span class="tag-small">Tag 3</span>
                                     </div>
-                                </article>
-                            
-                            ';
-                        }
-                    ?>
+                                    <button class="btn btn--primary btn--small add-to-cart-btn">В корзину</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card__img-placeholder">
+                            <img src="img/apple.webp">
+                        </div>
+                        <!--<div class="product-card__img-placeholder" style="background: url('img/apple.webp') no-repeat center / contain;"></div>-->
+                    </article>
+
+                    <article class="product-card">
+                        <div class="card-wraper">
+                            <div class="pc_logic">
+                                смартфон
+                                <button class="wishlist-btn"><img src="icons/Like.svg"></button>
+                            </div>
+                            <div class="pc_logic3">
+                                <div class="pc_logic2">
+                                    <h3 class="product-card__title">Apple Iphone 17 pro max</h3>
+                                    <span class="product-card__price">4000 р.</span>
+                                </div>
+
+
+                                <div class="product-card__footer">
+                                    <div class="product-card__tags">
+                                        <span class="tag-small">x8 zoom</span>
+                                        <span class="tag-small">120 гц</span>
+                                        <span class="tag-small">Tag 3</span>
+                                    </div>
+                                    <button class="btn btn--primary btn--small add-to-cart-btn">В корзину</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card__img-placeholder">
+                            <img src="img/apple.webp">
+                        </div>
+                        <!--<div class="product-card__img-placeholder" style="background: url('img/apple.webp') no-repeat center / contain;"></div>-->
+                    </article>
+
+                    <article class="product-card">
+                        <div class="card-wraper">
+                            <div class="pc_logic">
+                                смартфон
+                                <button class="wishlist-btn"><img src="icons/Like.svg"></button>
+                            </div>
+                            <div class="pc_logic3">
+                                <div class="pc_logic2">
+                                    <h3 class="product-card__title">Apple Iphone 17 pro max</h3>
+                                    <span class="product-card__price">4000 р.</span>
+                                </div>
+
+
+                                <div class="product-card__footer">
+                                    <div class="product-card__tags">
+                                        <span class="tag-small">x8 zoom</span>
+                                        <span class="tag-small">120 гц</span>
+                                        <span class="tag-small">Tag 3</span>
+                                    </div>
+                                    <button class="btn btn--primary btn--small add-to-cart-btn">В корзину</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card__img-placeholder">
+                            <img src="img/apple.webp">
+                        </div>
+                        <!--<div class="product-card__img-placeholder" style="background: url('img/apple.webp') no-repeat center / contain;"></div>-->
+                    </article>
+
+                    <article class="product-card">
+                        <div class="card-wraper">
+                            <div class="pc_logic">
+                                смартфон
+                                <button class="wishlist-btn"><img src="icons/Like.svg"></button>
+                            </div>
+                            <div class="pc_logic3">
+                                <div class="pc_logic2">
+                                    <h3 class="product-card__title">Apple Iphone 17 pro max</h3>
+                                    <span class="product-card__price">4000 р.</span>
+                                </div>
+
+
+                                <div class="product-card__footer">
+                                    <div class="product-card__tags">
+                                        <span class="tag-small">x8 zoom</span>
+                                        <span class="tag-small">120 гц</span>
+                                        <span class="tag-small">Tag 3</span>
+                                    </div>
+                                    <button class="btn btn--primary btn--small add-to-cart-btn">В корзину</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card__img-placeholder">
+                            <img src="img/apple.webp">
+                        </div>
+                        <!--<div class="product-card__img-placeholder" style="background: url('img/apple.webp') no-repeat center / contain;"></div>-->
+                    </article>
 
                 </div>
             </div>
@@ -289,9 +513,13 @@
                 </div>
             </div>
         </section>
+
+
+
+        <?PHP require_once 'blocks/footer.php'; ?>
     </main>
 
-    <?PHP require_once 'blocks/footer.php'; ?>
+
 
 
 </body>

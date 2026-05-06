@@ -8,21 +8,28 @@
 
 .hero__inner {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
+    /*justify-content: space-between;*/
     height: 100%;
     /*flex: 1;*/
 }
 
 .hero__content {
-    max-width: 900px;
+    max-width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .hero__title {
     font-size: 48px;
-    font-weight: 400;
+    /*font-weight: 400;*/
+    font-weight: bold;
     margin-bottom: 20px;
     letter-spacing: 1px;
+    color: var(--color-bg);
 }
 
 .hero__desc {
@@ -46,15 +53,20 @@
 .hero__videos {
     display: flex;
     gap: 15px;
+    transform: scale(1.2); /* Увеличит в 1.5 раза */
+    transform-origin: top left; /* Точка трансформации */
 }
 
 .video-thumb {
-    width: 300px;
-    height: 170px;
+    /*width: 300px;*/
+    /*height: 170px;*/
     background-color: var(--color-dark);
     color: white;
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    gap: 2px;
+    align-items: flex-start;
+    border-radius: 16px;
     padding: 10px;
     font-size: 12px;
 }
@@ -62,4 +74,79 @@
 .hero__cta {
     display: flex;
     gap: 15px;
+}
+
+.hero__cta btn btn--outline{
+    color: var(--color-bg);
+}
+
+
+
+
+
+.hero3{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    width: 100%;
+}
+
+.divider{
+    width: 100%;
+    height: 1px;
+    background-color: #dadada;
+}
+
+.hero4{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    color: var(--color-bg);
+}
+
+.hero__img{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0 0 0 5%;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+.hero__img img{
+    width: 90%;
+    height: auto;
+
+}
+
+.preview{
+    position: relative;
+    width: 300px;
+    height: 170px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.youtube{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    /*width: 30px;*/
+    /*height: 30px;*/
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    color: var(--color-bg);
+    font-size: 8px;
+    font-weight: 100;
+    align-items: center;
+    background: var(--color-dark);
+    padding: 4px 8px;
+    border-radius: 100px;
 }
