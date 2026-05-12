@@ -1,0 +1,175 @@
+.pc-configurator {
+    padding: 60px 40px;
+    color: inherit;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.config-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1fr; /* Левая часть чуть меньше правой */
+    /*gap: 30px;*/
+    height: 1000px;
+}
+
+
+.confdescr{
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.conf1{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Обводка блоков */
+.config-box {
+    border: 1px solid #e0e0e0; /* Тонкая светло-серая обводка */
+    /*padding: 20px;*/
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.config-right{
+    padding: 20px;
+}
+
+/* --- ЛЕВАЯ КОЛОНКА --- */
+.config-image-placeholder {
+    width: 100%;
+    /*height: 700px;*/
+    /*background: #f0f0f0; !* Серый прямоугольник для картинки *!*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e0e0e0;
+
+}
+
+.config-image {
+    width: 50%;
+    /*height: 100%;*/
+    object-fit: cover;
+    display: none; /* Скрыто до загрузки */
+    /*border-radius: 1000px;*/
+}
+
+.config-list-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+}
+
+.config-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /*height: 200px; !* Фиксированная высота для скролла *!*/
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.config-list::-webkit-scrollbar { width: 4px; }
+.config-list::-webkit-scrollbar-thumb { background: #e0e0e0; border-radius: 4px; }
+
+.build-item {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+.build-item:hover { border-color: #aaa; }
+.build-item.active {
+    border-color: #FF4500;
+    background: rgba(255, 69, 0, 0.05);
+}
+
+.build-item-title { font-weight: 500; font-size: 14px; }
+.build-item-price { color: #FF4500; font-weight: 700; font-size: 14px; }
+
+/* --- ПРАВАЯ КОЛОНКА --- */
+.config-header { margin-bottom: 20px; }
+
+.tag-outline {
+    display: inline-block;
+    padding: 4px 10px;
+    border: 1px solid #e0e0e0;
+    font-size: 12px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.config-title {
+    font-size: 26px;
+    text-transform: uppercase;
+}
+
+.config-specs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 8px;
+    font-size: 14px;
+}
+
+.spec-label { color: #888; }
+.spec-value { font-weight: 500; text-align: right; max-width: 60%; }
+
+.config-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.price-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #FF4500;
+}
+
+/* --- КНОПКА (Оранжевая, прозрачный фон, ховер-градиент) --- */
+.btn-orange-outline {
+    display: inline-block;
+    padding: 12px 30px;
+    background: transparent;
+    color: #FF4500;
+    border: 1px solid #FF4500;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn-orange-outline:hover {
+    background: linear-gradient(90deg, #FF4500, #FF8C00);
+    color: #fff;
+    border-color: transparent;
+}

@@ -22,7 +22,7 @@
         <div class="header__actions">
             <?php
                 if(isset($_COOKIE['email'])){
-//                    echo '<a href="../admin/index.php"><button class="icon-btn">Админ-панель</button></a>';
+                    echo '<a href="../admin/index.php"><button class="icon-btn">Админ-панель</button></a>';
                     echo '<button class="icon-btn">
                             <img src="../icons/Cart.svg" width="24">
                         </button>';

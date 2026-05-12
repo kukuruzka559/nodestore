@@ -91,7 +91,7 @@
                 </div>
             </div>
 
-            <div class="products-grid">
+            <div class="catalog-grid">
                 <?php /*for($i=0; $i<9; $i++): */?><!--
                     <article class="product-card">
                         <div class="product-card__img-placeholder">
@@ -119,22 +119,33 @@
                         foreach ($products as $prod) {
                             echo
                             '
-                                <article class="product-card">
-                                    <div class="product-card__img-placeholder" style="background: url(\'img/'.$prod->img.'\') no-repeat center / contain;">
-                                        <button class="wishlist-btn" data-id="'.$prod->id.'">♡</button>
-                                    </div>
-                                    <h3 class="product-card__title">'.$prod->name.'</h3>
-                                    <div class="product-card__tags">
-                                        <span class="tag-small">'.$prod->tags.'</span>
-                                        <!--<span class="tag-small">Gray</span>-->
-                                    </div>
-                                    <div class="product-card__footer">
-                                        <span class="product-card__price">'.$prod->price.'</span>
-                                        <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
-                                    </div>
-                                </article>
-                            
-                            
+                                    <article class="product-card">
+                                            <div class="pc_logic">
+                                                <div>'.$prod->category.'</div>
+                
+                                                <button class="wishlist-btn" data-id="'.$prod->id.'"><img src="icons/Like.svg"></button>
+                                            </div>
+                
+                
+                                            <div class="product-card__img-placeholder" style="background: url(\'img/'.$prod->img.'\') no-repeat center / contain;"></div>
+                
+                                            <div class="pc_logic3">
+                                                <div class="pc_logic2">
+                                                    <h3 class="product-card__title">'.$prod->name.'</h3>
+                                                    <span class="product-card__price">'.$prod->price.'</span>
+                                                </div>
+                
+                
+                                                <div class="product-card__footer">
+                                                    <div class="product-card__tags">
+                                                        <span class="tag-small">'.$prod->tags.'</span>
+                                                        
+                                                    </div>
+                                                    <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
+                                                </div>
+                                            </div>
+                                    </article>
+
                             ';
                         }
 //                    }

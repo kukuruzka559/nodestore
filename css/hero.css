@@ -1,7 +1,7 @@
 .hero {
     /*background-color: var(--color-bg-alt);*/
-    padding: 60px 0;
-    height: 94vh;
+    padding: 200px 0 60px 0;
+    height: 100vh;
     /*display: flex;*/
     flex-direction: column;
 }
@@ -53,8 +53,10 @@
 .hero__videos {
     display: flex;
     gap: 15px;
-    transform: scale(1.2); /* Увеличит в 1.5 раза */
+    /*transform: scale(1.2); !* Увеличит в 1.5 раза *!*/
     transform-origin: top left; /* Точка трансформации */
+    overflow-x: scroll;
+    width: 100%;
 }
 
 .video-thumb {
@@ -69,6 +71,7 @@
     border-radius: 16px;
     padding: 10px;
     font-size: 12px;
+    /*transform: scale(1.5);*/
 }
 
 .hero__cta {
@@ -118,7 +121,7 @@
 }
 
 .hero__img img{
-    width: 90%;
+    width: 75%;
     height: auto;
 
 }
