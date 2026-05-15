@@ -22,6 +22,14 @@
     <script src="js/pc_config.js" defer></script>
 
 
+<!--    aos js-->
+<!--    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="aos.css">
+<!--    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>-->
+    <script defer>
+        AOS.init();
+    </script>
+
 </head>
 <body>
     <?PHP require_once 'blocks/header.php'; ?>
@@ -36,13 +44,13 @@
 
 //        style="background: url(\'img/'.$workspaceprods1->img.'\') no-repeat center / contain;"
         ?>
-        <section class="hero" style="background: url(backgrounds/bg.png) no-repeat center / cover;">
+        <section class="hero" style="background: url(backgrounds/bg2.png) no-repeat center / cover;">
             <div class="container hero__inner">
                 <div class="hero__content">
                         <div class="hero3">
-                            <div class="hero2">
+                            <div class="hero2" data-aos="fade-up">
                                 <div class="hero1">
-                                    <h1 class="hero__title">NOTHING PHONE 4A PRO</h1>
+                                    <h1 class="hero__title" >NOTHING PHONE 4A PRO</h1>
                                     <p class="hero__desc">Lorem ipsum dolor sit amet consectetur. Egestas sem dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.</p>
                                 </div>
                                 <div class="hero__tags">
@@ -59,7 +67,7 @@
                             <!--                        <span class="divider"> </span>-->
                             <div class="divider"></div>
 
-                            <div class="hero4">
+                            <div class="hero4" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
                                 Обзоры
                                 <div class="hero__videos">
                                     <div class="video-thumb">
@@ -125,14 +133,16 @@
                         </div>
 
                         <div class="hero__cta">
-                            <button class="btn btn--outline" style="color: var(--color-bg); border-color: var(--color-bg); border-radius: 100px; width: 310px">Каталог</button>
-                            <button class="btn btn--primary" style="border-radius: 100px;">Перейти к товару</button>
+                            <a href="/catalog.php"><button class="btn btn--outline" style="color: var(--color-bg); border-color: var(--color-bg); border-radius: 100px; width: 310px" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">Каталог</button></a>
+
+                            <a href="/product.php"><button class="btn btn--primary" style="border-radius: 100px;" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="600">Перейти к товару</button></a>
+
                         </div>
                 </div>
 
 <!--                <div class="hero__bottom">-->
                 <div class="hero__img">
-                    <img src="backgrounds/mobila.png">
+                    <img src="backgrounds/mobila1.png" data-aos="zoom-in">
                 </div>
 
                 </div>
@@ -140,10 +150,10 @@
         </section>
 
 
-        <span class="line-left"></span>
-        <span class="line-right"></span>
-        <span class="line-bot"></span>
-        <span class="line-top"></span>
+<!--        <span class="line-left"></span>-->
+<!--        <span class="line-right"></span>-->
+<!--        <span class="line-bot"></span>-->
+<!--        <span class="line-top"></span>-->
 
 <!--        <div class="lines">-->
 <!--            -->
@@ -154,12 +164,12 @@
 <!--        </div>-->
 
         <section class="top-products">
-            <span class="line-bot"></span>
-            <span class="line-top"></span>
-            <img class="plus-left" src="icons/plus.svg">
-            <img class="plus-right" src="icons/plus.svg">
-            <img class="plus-bot-left" src="icons/plus.svg">
-            <img class="plus-bot-right" src="icons/plus.svg">
+<!--            <span class="line-bot"></span>-->
+<!--            <span class="line-top"></span>-->
+<!--            <img class="plus-left" src="icons/plus.svg">-->
+<!--            <img class="plus-right" src="icons/plus.svg">-->
+<!--            <img class="plus-bot-left" src="icons/plus.svg">-->
+<!--            <img class="plus-bot-right" src="icons/plus.svg">-->
             <div class="container">
                 <h2 class="section-title">ТОП ТОВАРОВ</h2>
                 <div class="products-grid">
@@ -406,55 +416,57 @@
                         <h1>Удобство на рабочем столе</h1>
                         <h3>тцтткткецтек кеуцн епулщцоу цу лцуа уктрлду</h3>
                     </div>
+
+                    <div class="workspace__products">
+                        <div class="w__product">
+                            <img class="w__product_img" src="img/air_pro.webp">
+                            <div class="font_wrap">
+                                <h2>Н shntrbren ghgnje;ishn qahbiok</h2>
+                                <h3>тип товара</h3>
+                                <button class="btn--small">В корзину</button>
+                            </div>
+                        </div>
+
+                        <div class="w__product">
+                            <img class="w__product_img" src="img/air_pro.webp">
+                            <div class="font_wrap">
+                                <h2>Н shntrbren ghgnje;ishn qahbiok</h2>
+                                <h3>тип товара</h3>
+                                <button class="btn--small">В корзину</button>
+                            </div>
+                        </div>
+
+                        <div class="w__product">
+                            <img class="w__product_img" src="img/air_pro.webp">
+                            <div class="font_wrap">
+                                <h2>Н shntrbren ghgnje;ishn qahbiok</h2>
+                                <h3>тип товара</h3>
+                                <button class="btn--small">В корзину</button>
+                            </div>
+                        </div>
+
+                        <div class="w__product">
+                            <img class="w__product_img" src="img/air_pro.webp">
+                            <div class="font_wrap">
+                                <h2>Н shntrbren ghgnje;ishn qahbiok</h2>
+                                <h3>тип товара</h3>
+                                <button class="btn--small">В корзину</button>
+                            </div>
+                        </div>
+
+                        <div class="w__product">
+                            <img class="w__product_img" src="img/air_pro.webp">
+                            <div class="font_wrap">
+                                <h2>Н shntrbren ghgnje;ishn qahbiok</h2>
+                                <h3>тип товара</h3>
+                                <button class="btn--small">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
 
-                <div class="workspace__products">
-                    <div class="w__product">
-                        <img class="w__product_img" src="img/air_pro.webp">
-                        <div class="font_wrap">
-                            <h2>Н shntrbren ghgnje;ishn qahbiok</h2>
-                            <h3>тип товара</h3>
-                            <button class="btn--small">В корзину</button>
-                        </div>
-                    </div>
 
-                    <div class="w__product">
-                        <img class="w__product_img" src="img/air_pro.webp">
-                        <div class="font_wrap">
-                            <h2>Н shntrbren ghgnje;ishn qahbiok</h2>
-                            <h3>тип товара</h3>
-                            <button class="btn--small">В корзину</button>
-                        </div>
-                    </div>
-
-                    <div class="w__product">
-                        <img class="w__product_img" src="img/air_pro.webp">
-                        <div class="font_wrap">
-                            <h2>Н shntrbren ghgnje;ishn qahbiok</h2>
-                            <h3>тип товара</h3>
-                            <button class="btn--small">В корзину</button>
-                        </div>
-                    </div>
-
-                    <div class="w__product">
-                        <img class="w__product_img" src="img/air_pro.webp">
-                        <div class="font_wrap">
-                            <h2>Н shntrbren ghgnje;ishn qahbiok</h2>
-                            <h3>тип товара</h3>
-                            <button class="btn--small">В корзину</button>
-                        </div>
-                    </div>
-
-                    <div class="w__product">
-                        <img class="w__product_img" src="img/air_pro.webp">
-                        <div class="font_wrap">
-                            <h2>Н shntrbren ghgnje;ishn qahbiok</h2>
-                            <h3>тип товара</h3>
-                            <button class="btn--small">В корзину</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -464,7 +476,7 @@
             <div class="news-1">
                 <h1>Новости</h1>
                 <div class="news-3">
-                    Следи за новостями в соц. сетях:
+                    Следи за новинками в соц. сетях:
                     <div class="social-networcks">
                         <img src="icons/Instagram.svg">
                         <img src="icons/Telegram.svg">
@@ -499,11 +511,23 @@
                                  data-desc="<?php echo htmlspecialchars($news['announce']); ?>"
                                  data-date="<?php echo $news['date_added']; ?>">
 
-                                <div class="news-item__progress"></div>
+<!--                                <div class="news-item__progress"></div>-->
                                 <div class="news-item__info">
                                     <span class="news-item__date"><?php echo date('d.m', strtotime($news['date_added'])); ?></span>
                                     <h4 class="news-item__title"><?php echo $news['title']; ?></h4>
+                                    <button class="btn--small newsbtn">смотреть ></button>
                                 </div>
+
+<!--                                <div class="news-item-img" style="background: url("newsimgs/--><?php //echo $news['image']; ?><!--") no-repeat center / contain;"></div>-->
+                                <?php
+                                // Разбиваем строку с названиями файлов по запятой
+                                $images = explode(',', $news['image']);
+                                // Берем первый файл (удаляем лишние пробелы)
+                                $firstImage = trim($images[0]);
+                                ?>
+                                <div class="news-item-img" style="background: url('newsimgs/<?php echo $firstImage; ?>') no-repeat center / cover;"></div>
+
+
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -527,7 +551,7 @@
                                 <h3>Собери компик так как тебе нужно без переплаты</h3>
                             </div>
 
-                            <button class="btn btn--primary" style="border-radius: 100px;">СОЗДАТЬ СБОРКУ ></button>
+                            <button class="btn btn--primary" style="border-radius: 100px; font-size: 18px; min-width: fit-content;">создать сборку</button>
                         </div>
 
 
@@ -594,6 +618,9 @@
 
 
 
-
+    <script src="aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

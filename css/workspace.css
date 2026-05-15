@@ -55,9 +55,10 @@
 
 .workspace_img_container{
     background: url(../backgrounds/bgwork.png) no-repeat center / cover;
-    min-width: 1200px;
+    /*min-width: 1200px;*/
+    width: 100%;
     position: relative;
-    min-height: 1000px;
+    min-height: 1200px;
 }
 
 .workspace__descr{
@@ -79,6 +80,12 @@
 }
 
 .workspace__products{
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    background: var(--color-dark);
+
+
     display: flex;
     flex-direction: column;
     gap: 20px;

@@ -1,0 +1,151 @@
+/* catalog-filters.css - расширение для фильтров */
+
+.filter-group {
+    border-bottom: 1px solid var(--color-border, #eaeef2);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.filter-group:last-child {
+    border-bottom: none;
+}
+
+.filter-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 400;
+    /*margin-bottom: 1rem;*/
+}
+
+.help-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background: #e2e6ea;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: help;
+    position: relative;
+}
+
+.help-icon:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 24px;
+    right: 0;
+    background: #1e2a36;
+    color: #fff;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 6px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* noUiSlider стилизация под тему */
+.noUi-target {
+    background: #eef2f6;
+    border: none;
+    box-shadow: none;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+.noUi-connect {
+    background: var(--color-primary, #0066cc);
+}
+.noUi-handle {
+    background: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    right: -9px;
+    top: -6px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.noUi-handle:before, .noUi-handle:after {
+    display: none;
+}
+
+.price-inputs {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 4px;
+}
+.price-inputs input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Блок с опциями */
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.filter-checkbox, .filter-radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.filter-checkbox input, .filter-radio input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+}
+.extra-options.hidden {
+    display: none;
+}
+.show-more-btn {
+    background: none;
+    border: none;
+    /*color: var(--color-primary, #0066cc);*/
+    font-size: 13px;
+    padding: 0;
+    margin-top: 8px;
+    cursor: pointer;
+    text-align: left;
+}
+.show-more-btn:hover {
+    text-decoration: underline;
+}
+
+.filter-search {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.options-scroll {
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+.mt-2 {
+    margin-top: 12px;
+}
+
+.btn--secondary {
+    background: transparent;
+    border: 1px solid #ced4da;
+    color: #2c3e50;
+}
+.btn--secondary:hover {
+    background: #f8f9fa;
+}

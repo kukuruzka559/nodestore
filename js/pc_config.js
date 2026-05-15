@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const item = document.createElement('div');
             item.className = 'build-item';
             item.innerHTML = `
+                <img class="build-item-img" src="pc_builds/${build.image}">
                 <span class="build-item-title">${build.title}</span>
                 <span class="build-item-price">$${build.price}</span>
             `;
