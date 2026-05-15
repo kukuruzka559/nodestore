@@ -24,7 +24,7 @@
     <script src="js/favorites.js" defer></script>
     <script src="js/cart.js" defer></script>
 
-    <script src="js/product.js" defer></script>
+    <script src="js/product.js"></script>
 </head>
 <body>
 <?php
@@ -67,8 +67,10 @@ $productDesc = "Продолжение легендарной линейки с 
 
                 </div>
 
-
-                <div class="hero-main-image" style="background: url(nothing_phone_4_a/nf4amain.png) no-repeat center / contain;"></div>
+<!--            tyle="background: url(nothing_phone_4_a/nf4amain.png) no-repeat center / contain;"-->
+                <div class="hero-main-image">
+                    <img src="nothing_phone_4_a/nf4amain.png">
+                </div>
 
                 <!-- Справа снизу: Конфигурация (через CSS positioning внутри грида) -->
                 <div class="hero-buy-block">
@@ -275,7 +277,7 @@ $productDesc = "Продолжение легендарной линейки с 
             <h2 class="section-title">Характеристики</h2>
 
             <div class="accordion">
-                <!-- ПУНКТ 1: АККУМУЛЯТОР -->
+<!--                 ПУНКТ 1: АККУМУЛЯТОР-->
                 <div class="accordion-item">
                     <input type="checkbox" id="spec-1" class="accordion-input">
                     <label for="spec-1" class="accordion-label">
@@ -293,7 +295,7 @@ $productDesc = "Продолжение легендарной линейки с 
                     </div>
                 </div>
 
-                <!-- ПУНКТ 2: ДИСПЛЕЙ -->
+<!--                 ПУНКТ 2: ДИСПЛЕЙ-->
                 <div class="accordion-item">
                     <input type="checkbox" id="spec-2" class="accordion-input">
                     <label for="spec-2" class="accordion-label">
@@ -310,7 +312,7 @@ $productDesc = "Продолжение легендарной линейки с 
                     </div>
                 </div>
 
-                <!-- ПУНКТ 3: КАМЕРЫ -->
+<!--                 ПУНКТ 3: КАМЕРЫ-->
                 <div class="accordion-item">
                     <input type="checkbox" id="spec-3" class="accordion-input">
                     <label for="spec-3" class="accordion-label">
@@ -327,6 +329,31 @@ $productDesc = "Продолжение легендарной линейки с 
                     </div>
                 </div>
             </div>
+
+<!--            --><?php
+//            // Получаем JSON и декодируем
+//            $specData = json_decode($product['specifications'], true);
+//            $specs = $specData['specs'];
+//            $media = $specData['media'];
+//            ?>
+<!---->
+<!--            <div class="accordion">-->
+<!--                --><?php //$i = 0; foreach ($specs as $catName => $items): $i++; ?>
+<!--                    <div class="accordion-item">-->
+<!--                        <input type="checkbox" id="spec---><?php //echo $i; ?><!--" class="accordion-input">-->
+<!--                        <label for="spec---><?php //echo $i; ?><!--" class="accordion-label">-->
+<!--                            <span class="label-main">--><?php //echo $catName; ?><!--</span>-->
+<!--                        </label>-->
+<!--                        <div class="accordion-content">-->
+<!--                            <ul>-->
+<!--                                --><?php //foreach ($items as $key => $val): ?>
+<!--                                    <li><strong>--><?php //echo $key; ?><!--:</strong> --><?php //echo $val; ?><!--</li>-->
+<!--                                --><?php //endforeach; ?>
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                --><?php //endforeach; ?>
+<!--            </div>-->
         </section>
 
         <!-- БЛОК 5: ОЦЕНКИ И ОБЗОРЫ -->

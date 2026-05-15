@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <small class="text-muted">${product.description ? product.description.substring(0,30)+'...' : ''}</small>
                             </td>
                             <td><span class="tag">${product.category || 'Без категории'}</span></td>
-                            <td><strong>$${product.price}</strong></td>
+                            <td><strong>${product.price} руб.</strong></td>
                             <td>
                                 <button class="action-btn" onclick="editProduct(${product.id})">✎</button>
                                 <button class="action-btn" onclick="deleteProduct(${product.id})">🗑</button>

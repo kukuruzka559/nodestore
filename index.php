@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная страница - Магазин электроники</title>
 
-    <link rel="stylesheet" href="css/global.css">
+
+    <link rel="stylesheet" href="css/product.css">
+
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/top-products.css">
@@ -14,6 +16,7 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/news_section.css">
     <link rel="stylesheet" href="css/pc_config.css">
+    <link rel="stylesheet" href="css/product.css">
 
 
     <script src="js/favorites.js" defer></script>
@@ -29,10 +32,11 @@
     <script defer>
         AOS.init();
     </script>
-
+    <link rel="stylesheet" href="css/global.css">
 </head>
 <body>
     <?PHP require_once 'blocks/header.php'; ?>
+    <?PHP require_once 'blocks/header2.php'; ?>
 
 
 
@@ -131,11 +135,11 @@
                             </div>
 
                         </div>
-
+<!--                    data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500"-->
                         <div class="hero__cta">
-                            <a href="/catalog.php"><button class="btn btn--outline" style="color: var(--color-bg); border-color: var(--color-bg); border-radius: 100px; width: 310px" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">Каталог</button></a>
+                            <a href="/catalog.php"><button class="btn btn--outline" style="color: var(--color-bg); border-color: var(--color-bg); border-radius: 100px; width: 310px" >Каталог</button></a>
 
-                            <a href="/product.php"><button class="btn btn--primary" style="border-radius: 100px;" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="600">Перейти к товару</button></a>
+                            <a href="/product.php"><button class="btn btn--primary" style="border-radius: 100px;" >Перейти к товару</button></a>
 
                         </div>
                 </div>
@@ -150,316 +154,157 @@
         </section>
 
 
-<!--        <span class="line-left"></span>-->
-<!--        <span class="line-right"></span>-->
-<!--        <span class="line-bot"></span>-->
-<!--        <span class="line-top"></span>-->
-
-<!--        <div class="lines">-->
-<!--            -->
-<!--            -->
-<!--            -->
-<!--            -->
-<!--            -->
-<!--        </div>-->
-
         <section class="top-products">
-<!--            <span class="line-bot"></span>-->
-<!--            <span class="line-top"></span>-->
-<!--            <img class="plus-left" src="icons/plus.svg">-->
-<!--            <img class="plus-right" src="icons/plus.svg">-->
-<!--            <img class="plus-bot-left" src="icons/plus.svg">-->
-<!--            <img class="plus-bot-right" src="icons/plus.svg">-->
             <div class="container">
                 <h2 class="section-title">ТОП ТОВАРОВ</h2>
-                <div class="products-grid">
+                <div class="similar-grid">
+                    <?php
+                    require_once 'lib/db.php';
+                    $sql = 'SELECT * FROM products ORDER BY id LIMIT 5';
+                    $query = $pdo->prepare($sql);
+                    $query->execute();
+                    $products = $query->fetchAll(PDO::FETCH_OBJ);
+                    foreach ($products as $prod) {
+                        echo
+                                '
+                                    <article class="product-card" style="height: auto; width: auto; border: none">
+                                            <div class="pc_logic">
+                                                <div>'.$prod->category.'</div>
+                
+                                                <button class="wishlist-btn" data-id="'.$prod->id.'"><img src="icons/Like.svg"></button>
+                                            </div>
+                
+                                            <a href="product-page.php?id='.$prod->id.'" class="product-card__link">
+                                                <div class="product-card__img-placeholder" style="background: url(\'img/'.$prod->img.'\') no-repeat center / contain;"></div>
+                                            </a>
+                                            
+                
+                                            <div class="pc_logic3">
+                                                <div class="pc_logic2">
+                                                    <h3 class="product-card__title">'.$prod->name.'</h3>
+                                                    <span class="product-card__price">'.$prod->price.' руб.</span>
+                                                </div>
+                
+                
+                                                <div class="product-card__footer">
+                                                    <div class="product-card__tags">
+                                                        <span class="tag-small">'.$prod->tags.'</span>
+                                                        
+                                                    </div>
+                                                    <div style="display: flex; flex-direction: row; gap: 10px; align-items: center;">
+                                                    <button class="btn btn--primary btn--small add-to-cart-btn" onclick="CompareManager.add('.$prod->id.')" style="background: none; border: 1px solid var(--color-border); color: var(--color-dark)">Сравнить</button>
+                                                    <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                    </article>
 
-<!--                    --><?php
-//                        require_once 'lib/db.php';
-//
-////                        $sql = 'SELECT * FROM trending ORDER BY id DESC LIMIT 4';
-//                    $sql = 'SELECT * FROM trending ORDER BY id LIMIT 4';
-//
-//
-//
-//                        $query = $pdo->prepare($sql);
-//                        $query->execute();
-//                        $trendprod = $query->fetchAll(PDO::FETCH_OBJ);
-//
-//                        /*print_r($trendprod);*/
-//                        foreach ($trendprod as $prod) {
-//                            echo '
-//                                <article class="product-card">
-//                                    <div class="product-card__img-placeholder" style="background: url(\'img/'.$prod->img.'\') no-repeat center / contain;">
-//                                        <button class="wishlist-btn" data-id="'.$prod->id.'">♡</button>
-//                                    </div>
-//                                    <h3 class="product-card__title"> '.$prod->productname.' </h3>
-//                                    <div class="product-card__tags">
-//                                        <!--<span class="tag-small"></span>-->
-//                                        <span class="tag-small">'.$prod->tags.'</span>
-//                                        <!--span class="tag-small">Tag 3</span>-->
-//                                    </div>
-//                                    <div class="product-card__footer">
-//                                        <span class="product-card__price">'.$prod->price.' р.</span>
-//                                        <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
-//                                    </div>
-//                                </article>
-//
-//                            ';
-//                        }
-//                    ?>
-
-                    <article class="product-card">
-                            <div class="pc_logic">
-                                <div>смартфон</div>
-
-                                <button class="wishlist-btn"><img src="icons/Like.svg"></button>
-                            </div>
-
-
-                            <div class="product-card__img-placeholder" style="background: url('img/apple.webp') no-repeat center / contain; "></div>
-
-                            <div class="pc_logic3">
-                                <div class="pc_logic2">
-                                    <h3 class="product-card__title">Apple Iphone 17 pro max</h3>
-                                    <span class="product-card__price">4000 р.</span>
-                                </div>
-
-
-                                <div class="product-card__footer">
-                                    <div class="product-card__tags">
-                                        <span class="tag-small">x8 zoom</span>
-                                        <span class="tag-small">120 гц</span>
-                                        <span class="tag-small">Tag 3</span>
-                                    </div>
-                                    <button class="btn btn--primary btn--small add-to-cart-btn">В корзину</button>
-                                </div>
-                            </div>
-                    </article>
-
-
-
+                            ';
+                    }
+                    ?>
                 </div>
             </div>
         </section>
 
         <section class="workspace">
 
-            <span class="line-bot" style="left: -35px; right: -35px; width: 100vw;"></span>
-            <img class="plus-bot-left" src="icons/plus.svg" style="left: -5px">
-            <img class="plus-bot-right" src="icons/plus.svg" style="right: -5px">
-<!--            <div class="container">-->
-<!--                <h2 class="section-title section-title--left">УЛУЧШИ РАБОЧЕЕ МЕСТО</h2>-->
-<!---->
-<!---->
-<!---->
-<!---->
-<!--                    --><?php
-//                    require_once 'lib/db.php';
-//
-//                    //                        $sql = 'SELECT * FROM trending ORDER BY id DESC LIMIT 4';
-//                    $sql1 = 'SELECT * FROM products where id = 1';
-//                    $sql2 = 'SELECT * FROM products where id = 2 ';
-//                    $sql3 = 'SELECT * FROM products where id = 3 ';
-//                    $sql4 = 'SELECT * FROM products where id = 4 ';
-//                    $sql5 = 'SELECT * FROM products where id = 5 ';
-//
-//
-//
-//                    $query = $pdo->prepare($sql1);
-//                    $query->execute();
-//                    $workspaceprods1 = $query->fetch(PDO::FETCH_OBJ);
-//
-//                    $query = $pdo->prepare($sql2);
-//                    $query->execute();
-//                    $workspaceprods2 = $query->fetch(PDO::FETCH_OBJ);
-//
-//                    $query = $pdo->prepare($sql3);
-//                    $query->execute();
-//                    $workspaceprods3 = $query->fetch(PDO::FETCH_OBJ);
-//
-//                    $query = $pdo->prepare($sql4);
-//                    $query->execute();
-//                    $workspaceprods4 = $query->fetch(PDO::FETCH_OBJ);
-//
-//                    $query = $pdo->prepare($sql5);
-//                    $query->execute();
-//                    $workspaceprods5 = $query->fetch(PDO::FETCH_OBJ);
-//
-//
-//
-//
-//                        echo '
-//                         <div class="workspace-grid">
-//
-//                            <div class="workspace-item">
-//                                <div class="workspace-item__img-placeholder" style="background: url(\'img/'.$workspaceprods1->img.'\') no-repeat center / contain;">
-//                                    <button class="wishlist-btn" data-id="'.$prod->id.'">♡</button>
-//                                </div>
-//                                <h3 class="workspace-item__title">'.$workspaceprods1->productname.'</h3>
-//                                <div class="product-card__tags">
-//                                    <span class="tag-small">'.$workspaceprods1->tags.'</span>
-//
-//                                </div>
-//                                <div class="product-card__footer">
-//                                    <span class="product-card__price">'.$workspaceprods1->price.'</span>
-//                                    <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
-//                                </div>
-//                            </div>
-//
-//                            <div class="workspace-item">
-//                                <div class="workspace-item__img-placeholder" style="background: url(\'img/'.$workspaceprods2->img.'\') no-repeat center / contain;">
-//                                    <button class="wishlist-btn" data-id="'.$prod->id.'">♡</button>
-//                                </div>
-//                                <h3 class="workspace-item__title">'.$workspaceprods2->productname.'</h3>
-//                                <div class="product-card__tags">
-//                                    <span class="tag-small">'.$workspaceprods2->tags.'</span>
-//
-//                                </div>
-//                                <div class="product-card__footer">
-//                                    <span class="product-card__price">'.$workspaceprods2->price.'</span>
-//                                    <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
-//                                </div>
-//                            </div>
-//
-//                            <div class="workspace-item">
-//                                <div class="workspace-item__img-placeholder" style="background: url(\'img/'.$workspaceprods3->img.'\') no-repeat center / contain;">
-//                                    <button class="wishlist-btn" data-id="'.$prod->id.'">♡</button>
-//                                </div>
-//                                <h3 class="workspace-item__title">'.$workspaceprods3->productname.'</h3>
-//                                <div class="product-card__tags">
-//                                    <span class="tag-small">'.$workspaceprods3->tags.'</span>
-//
-//                                </div>
-//                                <div class="product-card__footer">
-//                                    <span class="product-card__price">'.$workspaceprods3->price.'</span>
-//                                    <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
-//                                </div>
-//                            </div>
-//
-//                            <div class="workspace-item">
-//                                <div class="workspace-item__img-placeholder" style="background: url(\'img/'.$workspaceprods4->img.'\') no-repeat center / contain;">
-//                                    <button class="wishlist-btn" data-id="'.$prod->id.'">♡</button>
-//                                </div>
-//                                <h3 class="workspace-item__title">'.$workspaceprods4->productname.'</h3>
-//                                <div class="product-card__tags">
-//                                    <span class="tag-small">'.$workspaceprods4->tags.'</span>
-//
-//                                </div>
-//                                <div class="product-card__footer">
-//                                    <span class="product-card__price">'.$workspaceprods4->price.'</span>
-//                                    <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
-//                                </div>
-//                            </div>
-//
-//                            <div class="workspace-item">
-//                                <div class="workspace-item__img-placeholder" style="background: url(\'img/'.$workspaceprods5->img.'\') no-repeat center / contain;">
-//                                    <button class="wishlist-btn" data-id="'.$prod->id.'">♡</button>
-//                                </div>
-//                                <h3 class="workspace-item__title">'.$workspaceprods5->productname.'</h3>
-//                                <div class="product-card__tags">
-//                                    <span class="tag-small">'.$workspaceprods5->tags.'</span>
-//
-//                                </div>
-//                                <div class="product-card__footer">
-//                                    <span class="product-card__price">'.$workspaceprods5->price.'</span>
-//                                    <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
-//                                </div>
-//                            </div>
-//
-//
-//                            <div class="workspace-item">
-//                                <div class="workspace-item__img-placeholder" style="background: url(\'img/'.$workspaceprods5->img.'\') no-repeat center / contain;">
-//                                    <button class="wishlist-btn" data-id="'.$prod->id.'">♡</button>
-//                                </div>
-//                                <h3 class="workspace-item__title">'.$workspaceprods5->productname.'</h3>
-//                                <div class="product-card__tags">
-//                                    <span class="tag-small">'.$workspaceprods5->tags.'</span>
-//
-//                                </div>
-//                                <div class="product-card__footer">
-//                                    <span class="product-card__price">'.$workspaceprods5->price.'</span>
-//                                    <button class="btn btn--primary btn--small">В корзину</button>
-//                                </div>
-//                            </div>
-//
-//                            <div class="workspace-item">
-//                                <div class="workspace-item__img-placeholder" style="background: url(\'img/'.$workspaceprods1->img.'\') no-repeat center / contain;">
-//                                    <button class="wishlist-btn" data-id="'.$prod->id.'">♡</button>
-//                                </div>
-//                                <h3 class="workspace-item__title">'.$workspaceprods1->productname.'</h3>
-//                                <div class="product-card__tags">
-//                                    <span class="tag-small">'.$workspaceprods1->tags.'</span>
-//
-//                                </div>
-//                                <div class="product-card__footer">
-//                                    <span class="product-card__price">'.$workspaceprods1->price.'</span>
-//                                    <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
-//                                </div>
-//                            </div>
-//
-//
-//
-//                        </div>
-//                            ';
-//
-//                    ?>
-<!--            </div>-->
-
 
             <div class="container_work">
 
                 <div class="workspace_img_container">
-                    <span class="line-left" style="left: 50%;"></span>
+
 
                     <div class="workspace__descr">
                         <h1>Удобство на рабочем столе</h1>
-                        <h3>тцтткткецтек кеуцн епулщцоу цу лцуа уктрлду</h3>
+                        <h3>Каждый момент будет чистым кайфом</h3>
                     </div>
 
                     <div class="workspace__products">
                         <div class="w__product">
-                            <img class="w__product_img" src="img/air_pro.webp">
+                            <div class="img-container"><img class="w__product_img" src="8bitdo/8bitdo0.png"></div>
+
                             <div class="font_wrap">
-                                <h2>Н shntrbren ghgnje;ishn qahbiok</h2>
-                                <h3>тип товара</h3>
-                                <button class="btn--small">В корзину</button>
+                                <div style="display: flex; flex-direction: column;">
+                                    <h2>8BitDo Ultimate 2</h2>
+                                    <h3>Геймпад</h3>
+                                </div>
+
+                                <div style="display: flex; flex-direction: row; gap: 20px; justify-content: flex-start">
+                                    <button class="btn--small">В корзину</button>
+                                    <button class="btn--small" style="background: none; color: var(--color-border); border: 1px solid var(--color-border)">В сравнение</button>
+                                </div>
+
                             </div>
                         </div>
 
                         <div class="w__product">
-                            <img class="w__product_img" src="img/air_pro.webp">
+                            <div class="img-container">
+                                <img class="w__product_img" src="8bitdo/2.png">
+                            </div>
+
                             <div class="font_wrap">
-                                <h2>Н shntrbren ghgnje;ishn qahbiok</h2>
-                                <h3>тип товара</h3>
-                                <button class="btn--small">В корзину</button>
+                                <div style="display: flex; flex-direction: column;">
+                                    <h2>Наушники беспроводные</h2>
+                                    <h3>Наушники</h3>
+                                </div>
+
+                                <div style="display: flex; flex-direction: row; gap: 20px; justify-content: flex-start">
+                                    <button class="btn--small">В корзину</button>
+                                    <button class="btn--small" style="background: none; color: var(--color-border); border: 1px solid var(--color-border)">В сравнение</button>
+                                </div>
+
                             </div>
                         </div>
 
                         <div class="w__product">
-                            <img class="w__product_img" src="img/air_pro.webp">
+                            <div class="img-container"><img class="w__product_img" src="8bitdo/3.png"></div>
+
                             <div class="font_wrap">
-                                <h2>Н shntrbren ghgnje;ishn qahbiok</h2>
-                                <h3>тип товара</h3>
-                                <button class="btn--small">В корзину</button>
+                                <div style="display: flex; flex-direction: column;">
+                                    <h2>Мышь беспроводная</h2>
+                                    <h3>Мышь копьютерная</h3>
+                                </div>
+
+                                <div style="display: flex; flex-direction: row; gap: 20px; justify-content: flex-start">
+                                    <button class="btn--small">В корзину</button>
+                                    <button class="btn--small" style="background: none; color: var(--color-border); border: 1px solid var(--color-border)">В сравнение</button>
+                                </div>
+
                             </div>
                         </div>
 
                         <div class="w__product">
-                            <img class="w__product_img" src="img/air_pro.webp">
+                            <div class="img-container"><img class="w__product_img" src="8bitdo/1.png"></div>
+
                             <div class="font_wrap">
-                                <h2>Н shntrbren ghgnje;ishn qahbiok</h2>
-                                <h3>тип товара</h3>
-                                <button class="btn--small">В корзину</button>
+                                <div style="display: flex; flex-direction: column;">
+                                    <h2>Клавиатура беспроводная</h2>
+                                    <h3>Клавиатура</h3>
+                                </div>
+
+                                <div style="display: flex; flex-direction: row; gap: 20px; justify-content: flex-start">
+                                    <button class="btn--small">В корзину</button>
+                                    <button class="btn--small" style="background: none; color: var(--color-border); border: 1px solid var(--color-border)">В сравнение</button>
+                                </div>
+
                             </div>
                         </div>
 
                         <div class="w__product">
-                            <img class="w__product_img" src="img/air_pro.webp">
+                            <div class="img-container"><img class="w__product_img" src="8bitdo/4.png"></div>
+
                             <div class="font_wrap">
-                                <h2>Н shntrbren ghgnje;ishn qahbiok</h2>
-                                <h3>тип товара</h3>
-                                <button class="btn--small">В корзину</button>
+                                <div style="display: flex; flex-direction: column;">
+                                    <h2>Лампа на монитор</h2>
+                                    <h3>Лампа</h3>
+                                </div>
+
+                                <div style="display: flex; flex-direction: row; gap: 20px; justify-content: flex-start">
+                                    <button class="btn--small">В корзину</button>
+                                    <button class="btn--small" style="background: none; color: var(--color-border); border: 1px solid var(--color-border)">В сравнение</button>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -514,7 +359,7 @@
 <!--                                <div class="news-item__progress"></div>-->
                                 <div class="news-item__info">
                                     <span class="news-item__date"><?php echo date('d.m', strtotime($news['date_added'])); ?></span>
-                                    <h4 class="news-item__title"><?php echo $news['title']; ?></h4>
+                                    <h2 class="news-item__title"><?php echo $news['title']; ?></h2>
                                     <button class="btn--small newsbtn">смотреть ></button>
                                 </div>
 

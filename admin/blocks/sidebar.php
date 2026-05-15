@@ -1,6 +1,6 @@
 <aside class="sidebar">
     <div class="sidebar__logo">
-        <span class="logo-icon">///</span> Админ-панель
+        <span class="logo-icon"></span> Админ-панель
     </div>
     <nav class="sidebar__nav">
         <a href="index.php" class="nav-item">📦 Каталог</a>

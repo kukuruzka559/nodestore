@@ -122,15 +122,22 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <article class="product-card fav-item" data-id="<?= $prod['id'] ?>">
 <!--                            <div class="card-checkbox-wrapper">-->
 <!--                                <input type="checkbox" class="fav-checkbox" value="--><?php //= $prod['id'] ?><!--">-->
+                            <button class="wishlist-btn active" data-id="<?= $prod['id'] ?>" style="position: absolute; left: 20px; top: 20px">❤️</button>
 <!--                            </div>-->
-                            <div class="product-card__img-placeholder" style="background: url('img/<?= $prod['img'] ?>') no-repeat center / contain;">
-                                <button class="wishlist-btn active" data-id="<?= $prod['id'] ?>">❤️</button>
+                            <div class="product-card__img-placeholder" style="background: url('img/<?= $prod['img'] ?>') no-repeat center / contain;"></div>
+
+                            <div class="profile-prod-wraper">
+                                <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-end;">
+                                    <h3 class="product-card__title"><?= htmlspecialchars($prod['name']) ?></h3>
+                                    <small><?= htmlspecialchars($prod['category']) ?></small>
+                                </div>
+
+                                <div class="product-card__footer">
+                                    <span class="product-card__price">$<?= $prod['price'] ?></span>
+                                    <button class="btn btn--primary btn--small">В корзину</button>
+                                </div>
                             </div>
-                            <h3 class="product-card__title"><?= htmlspecialchars($prod['name']) ?> <br><small><?= htmlspecialchars($prod['category']) ?></small></h3>
-                            <div class="product-card__footer">
-                                <span class="product-card__price">$<?= $prod['price'] ?></span>
-                                <button class="btn btn--primary btn--small">В корзину</button>
-                            </div>
+
                         </article>
                     <?php endforeach; ?>
                 </div>

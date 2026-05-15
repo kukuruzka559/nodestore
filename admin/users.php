@@ -1,3 +1,8 @@
+<?php
+require_once 'auth_check.php'; // ЗАЩИТА
+?>
+
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -17,7 +22,7 @@
 
     <main class="main-content">
         <header class="topbar">
-            <a href="../index.php"><button class="btn btn--primary">На сайт</button></a>
+            <a href="../index.php"><button class="btn btn--primary">Вернутся на сайт</button></a>
             <div class="search-bar">
                 <input type="text" id="userSearch" placeholder="Поиск по ID, Email или Username...">
             </div>
@@ -28,7 +33,7 @@
                 <h1>Управление пользователями <span id="total-users" class="text-muted">0</span></h1>
             </div>
             <div class="actions-block">
-                <button class="btn btn-primary" id="openAddUserModalBtn">+ Добавить юзера</button>
+                <button class="btn btn-primary" id="openAddUserModalBtn">+ Добавить пользователя</button>
             </div>
         </div>
 

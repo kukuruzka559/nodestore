@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </td>
                             <td>${order.product_name}</td>
                             <td>${order.count} шт.</td>
-                            <td><strong>$${(order.count * order.priceforone).toFixed(2)}</strong></td>
+                            <td><strong>${(order.count * order.priceforone).toFixed(2)} руб.</strong></td>
                             <td>
                                 <select class="status-select" onchange="quickUpdateStatus(${order.order_id}, this.value)">
                                     ${getStatusOptions(order.status)}

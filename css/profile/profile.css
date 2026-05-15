@@ -81,10 +81,32 @@
 /* Переопределяем некоторые стили карточки для узкой колонки */
 .wishlist-col .product-card {
     background: var(--color-bg);
-    padding: 10px;
+    padding: 20px;
+    padding-left: 40px;
     position: relative;
+    height: 200px;
 }
 
+.product-card__img-placeholder{
+    width: 130px;
+}
+
+.profile-prod-wraper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: auto;
+}
+
+
+.product-card__footer{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: auto;
+    justify-content: flex-end;
+}
 /* Стили корзины (3 колонка) */
 .cart-item {
     display: flex;

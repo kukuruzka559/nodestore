@@ -21,3 +21,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const mainImg = document.querySelector('.hero-main-image img');
+    const thumbs = document.querySelectorAll('.thumb-box img');
+    let currentIndex = 0;
+
+    // Смена по клику на миниатюру
+    thumbs.forEach((img, index) => {
+        img.parentElement.onclick = () => {
+            mainImg.src = img.src;
+            currentIndex = index;
+        };
+    });
+
+    // Функция для кнопок "влево/вправо" (если добавишь их в верстку)
+    window.moveSlide = (step) => {
+        currentIndex += step;
+        if (currentIndex >= thumbs.length) currentIndex = 0;
+        if (currentIndex < 0) currentIndex = thumbs.length - 1;
+        mainImg.src = thumbs[currentIndex].src;
+    };
+});

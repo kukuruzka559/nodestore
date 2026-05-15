@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог</title>
 
-    <link rel="stylesheet" href="css/global.css">
+
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/top-products.css">
@@ -37,6 +37,8 @@
 
     <link rel="stylesheet" href="css/catalog/catalogfix.css">
 
+    <link rel="stylesheet" href="css/global.css">
+    <script src="js/compare.js" defer></script>
 <!--    <style-->
 <!--    .noUi-handle{-->
 <!--    -->
@@ -46,13 +48,15 @@
 <body>
 
 <?php include 'blocks/header.php'; ?>
+<?php include 'blocks/header2.php'; ?>
 <main>
 
 
     <section class="categories-nav">
         <div class="container">
             <ul class="categories-list">
-                <li><a href="#" class="cat-item active">Смартфоны</a></li>
+                <li><a href="#" class="cat-item active">Все товары</a></li>
+                <li><a href="#" class="cat-item">Смартфоны</a></li>
                 <li><a href="#" class="cat-item">Комплектующие для ПК</a></li>
                 <li><a href="#" class="cat-item">Ноутбуки</a></li>
                 <li><a href="#" class="cat-item">Периферия</a></li>
@@ -257,23 +261,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <section class="catalog-main">
             <div class="catalog-toolbar">
                 <p class="results-count">Найдено: 124 товара</p>
@@ -288,22 +275,6 @@
             </div>
 
             <div class="catalog-grid">
-                <?php /*for($i=0; $i<9; $i++): */?><!--
-                    <article class="product-card">
-                        <div class="product-card__img-placeholder">
-                            <button class="wishlist-btn">♡</button>
-                        </div>
-                        <h3 class="product-card__title">Смартфон Nothing Phone 2</h3>
-                        <div class="product-card__tags">
-                            <span class="tag-small">12/256 ГБ</span>
-                            <span class="tag-small">Gray</span>
-                        </div>
-                        <div class="product-card__footer">
-                            <span class="product-card__price">$799.00</span>
-                            <button class="btn btn--primary btn--small">В корзину</button>
-                        </div>
-                    </article>
-                --><?php /*endfor; */?>
 
                 <?php
                         require_once 'lib/db.php';
@@ -321,13 +292,15 @@
                                                 <button class="wishlist-btn" data-id="'.$prod->id.'"><img src="icons/Like.svg"></button>
                                             </div>
                 
-                
-                                            <div class="product-card__img-placeholder" style="background: url(\'img/'.$prod->img.'\') no-repeat center / contain;"></div>
+                                            <a href="product-page.php?id='.$prod->id.'" class="product-card__link">
+                                                <div class="product-card__img-placeholder" style="background: url(\'img/'.$prod->img.'\') no-repeat center / contain;"></div>
+                                            </a>
+                                            
                 
                                             <div class="pc_logic3">
                                                 <div class="pc_logic2">
                                                     <h3 class="product-card__title">'.$prod->name.'</h3>
-                                                    <span class="product-card__price">'.$prod->price.'</span>
+                                                    <span class="product-card__price">'.$prod->price.' руб.</span>
                                                 </div>
                 
                 
@@ -337,7 +310,7 @@
                                                         
                                                     </div>
                                                     <div style="display: flex; flex-direction: row; gap: 10px; align-items: center;">
-                                                    <button class="btn btn--primary btn--small add-to-cart-btn" style="background: none; border: 1px solid var(--color-border); color: var(--color-dark)">Сравнить</button>
+                                                    <button class="btn btn--primary btn--small add-to-cart-btn" onclick="CompareManager.add('.$prod->id.')" style="background: none; border: 1px solid var(--color-border); color: var(--color-dark)">Сравнить</button>
                                                     <button class="btn btn--primary btn--small add-to-cart-btn" data-id="'.$prod->id.'">В корзину</button>
                                                     </div>
                                                     

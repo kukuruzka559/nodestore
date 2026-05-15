@@ -1,5 +1,5 @@
 <?php
-// Здесь можно добавить проверку прав доступа
+require_once 'auth_check.php'; // ЗАЩИТА
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -20,7 +20,7 @@
 
     <main class="main-content">
         <header class="topbar">
-            <a href="../index.php"><button class="btn btn--primary">На сайт</button></a>
+            <a href="../index.php"><button class="btn btn--primary">Вернутся на сайт</button></a>
             <div class="search-bar">
                 <input type="text" id="orderSearch" placeholder="Поиск по ID заказа или Email...">
             </div>
@@ -92,7 +92,7 @@
                         <input type="number" id="orderCount" name="count" min="1" required>
                     </div>
                     <div class="form-group">
-                        <label>Цена за шт. ($)</label>
+                        <label>Цена за шт. (руб. )</label>
                         <input type="number" step="0.01" id="orderPrice" name="priceforone" required>
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 <?php
-// Ограничение доступа можно добавить позже (сессии и тд)
+// Ограничение доступа
+require_once 'auth_check.php'; // ЗАЩИТА
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -21,7 +22,7 @@
     <!-- Основной контент -->
     <main class="main-content">
         <header class="topbar">
-            <a href="../index.php"><button class="btn btn--primary">Главная</button></a>
+            <a href="../index.php"><button class="btn btn--primary">Вернутся на сайт</button></a>
             <div class="search-bar">
                 <input type="text" placeholder="Поиск">
             </div>
@@ -75,7 +76,7 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Цена ($)</label>
+                        <label>Цена (руб.)</label>
                         <input type="number" id="productPrice" name="price" required>
                     </div>
                     <div class="form-group">

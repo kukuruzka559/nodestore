@@ -6,9 +6,10 @@
 
         <nav class="header__nav">
             <a class="header__links" href="/catalog.php">Каталог</a>
-            <a class="header__links" href="#">Доставка и оплата</a>
+            <a class="header__links" href="/delivery.php">Доставка и оплата</a>
             <a class="header__links" href="#">О нас</a>
             <a class="header__links" href="#">Контакты</a>
+            <a class="header__links" href="/compare.php">Сравнение</a>
 <!--            <a href="#">Помощь</a>-->
         </nav>
 

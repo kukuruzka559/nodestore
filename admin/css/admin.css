@@ -53,15 +53,22 @@ body { background-color: var(--bg-color); color: var(--text-main); }
 
 .topbar {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 50px;
+    align-items: center;
     margin-bottom: 30px;
+}
+
+.search-bar{
+    width: auto;
 }
 
 .search-bar input {
     padding: 10px 15px;
     border: 1px solid var(--border);
     border-radius: 4px;
-    width: 300px;
+    width: 700px;
     background: #FFF;
 }
 
@@ -85,16 +92,16 @@ body { background-color: var(--bg-color); color: var(--text-main); }
 }
 
 .btn-primary { background-color: var(--primary); color: #FFF; }
-.btn-full { width: 100%; margin-top: 10px; }
+.btn-full { width: 100%; margin-top: 10px; font-size: 24px}
 
 /* Таблица */
 .table-container { background: #FFF; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
 .admin-table { width: 100%; border-collapse: collapse; text-align: left; }
 .admin-table th { background: #F8F9FA; padding: 15px; font-size: 12px; color: var(--text-muted); font-weight: 600; border-bottom: 1px solid var(--border); }
-.admin-table td { padding: 15px; border-bottom: 1px solid var(--border); font-size: 14px; vertical-align: middle; }
-.admin-table img { width: 40px; height: 40px; object-fit: cover; border-radius: 4px; background: #EEE; }
+.admin-table td { padding: 15px; border-bottom: 1px solid var(--border); font-size: 18px; vertical-align: middle; }
+.admin-table img { height: 150px; object-fit: cover; border-radius: 4px; background: #EEE; }
 
-.action-btn { background: none; border: none; cursor: pointer; color: var(--text-muted); margin-right: 10px; font-size: 16px; }
+.action-btn { background: none; border: none; cursor: pointer; color: var(--text-muted); margin-right: 10px; font-size: 30px; }
 .action-btn:hover { color: var(--primary); }
 
 /* Модальное окно и Drag&Drop */
@@ -103,16 +110,16 @@ body { background-color: var(--bg-color); color: var(--text-main); }
     background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 100;
 }
 .modal-overlay.active { display: flex; }
-.modal { background: #FFF; width: 500px; border-radius: 8px; padding: 20px; }
+.modal { background: #FFF; width: 700px; border-radius: 8px; padding: 20px; }
 .modal-header { display: flex; justify-content: space-between; margin-bottom: 20px; }
 .close-btn { background: none; border: none; font-size: 24px; cursor: pointer; }
 
-.form-group { margin-bottom: 15px; }
+.form-group { margin-bottom: 15px; font-size: 18px}
 .form-row { display: flex; gap: 15px; }
 .form-row .form-group { flex: 1; }
-label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 5px; }
+label { display: block; font-size: 16px; color: var(--text-muted); margin-bottom: 5px; }
 input[type="text"], input[type="number"], textarea {
-    width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 4px;
+     padding: 10px; border: 1px solid var(--border); border-radius: 4px; font-size: 18px;
 }
 
 .drop-zone {
