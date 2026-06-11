@@ -35,10 +35,10 @@
 Личный кабинет</button></a>';
                 }
                 else{
-                    echo '<a href="/login.php"><button class="btn btn--header">
-<img src="../icons/user.svg">
+                    echo '<a href="/login.php"><button class="btn btn--header" style="background: none; border: 1px solid var(--color-dark); color: var(--color-dark); ">
+<img src="../icons/user-black.svg" >
 Войти</button></a>';
-                    echo '<a href="/register.php"><button class="btn btn--header">
+                    echo '<a href="/register.php"><button class="btn btn--header" >
 <img src="../icons/user-add.svg">
 Зарегистрироватся</button></a>';
                 }

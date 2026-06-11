@@ -54,6 +54,9 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="css/product-card.css">
     <link rel="stylesheet" href="css/profile/profile.css">
     <link rel="stylesheet" href="css/profile/profile-extra.css"> <!-- Новые стили -->
+
+    <script src="js/favorites.js" defer></script>
+    <script src="js/cart.js" defer></script>
 </head>
 <body>
 <?php include 'blocks/header.php'; ?>
@@ -89,8 +92,8 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <!--                                <button class="delete-order-btn">🗑</button>-->
                             </div>
                             <div class="order-item__info">
-                                <div style="display:flex; gap: 10px; align-items: center; margin-bottom: 10px;">
-                                    <img src="img/<?= $order['img'] ?>" alt="" style="width: 40px; height: 40px; object-fit: contain;">
+                                <div style="display:flex; gap: 30px; align-items: center; margin-bottom: 10px;">
+                                    <img src="img/<?= $order['img'] ?>" alt="" style="width: -40px; height: 160px; object-fit: contain;">
                                     <div>
                                         <p style="font-weight: bold;"><?= htmlspecialchars($order['name']) ?></p>
                                         <p style="font-size: 12px; color: #888;"><?= htmlspecialchars($order['category']) ?> x<?= $order['count'] ?></p>
@@ -134,7 +137,7 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                                 <div class="product-card__footer">
                                     <span class="product-card__price">$<?= $prod['price'] ?></span>
-                                    <button class="btn btn--primary btn--small">В корзину</button>
+                                    <button class="btn btn--primary btn--small" data-id="'.$prod->id.'">В корзину</button>
                                 </div>
                             </div>
 

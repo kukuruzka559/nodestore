@@ -10,11 +10,14 @@
 }
 
 .auth-container {
-    background-color: var(--color-placeholder); /* Серый фон из вайрфрейма */
+    /*background-color: var(--color-placeholder); !* Серый фон из вайрфрейма *!*/
     padding: 60px 40px;
     width: 100%;
     max-width: 600px;
     text-align: center;
+    border-radius: 100px;
+    border: 1px solid;
+
 }
 
 .auth-title {
@@ -44,11 +47,13 @@
     border: 1px solid var(--color-text-main);
     font-size: 16px;
     min-width: 120px;
+    border-radius: 100px;
 }
 
 .tab-btn--active {
     background: var(--color-bg);
     border-color: var(--color-bg);
+    border-radius: 100px;
 }
 
 /* Поля ввода */
@@ -65,6 +70,7 @@
     background-color: #F0F0F0; /* Чуть светлее фона карточки */
     font-size: 14px;
     outline: none;
+    border-radius: 100px;
 }
 
 /* Блок соцсетей */
@@ -80,13 +86,23 @@
 
 .social-icons {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 40px);
     gap: 10px;
 }
 
 .social-box {
     aspect-ratio: 1 / 1;
-    background-color: var(--color-dark);
+    /*background-color: var(--color-dark);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        width: 80%;
+        height: 80%;
+    }
+
+
 }
 
 /* Кнопки действий */
@@ -101,4 +117,5 @@
     background-color: var(--color-border);
     border: 1px solid var(--color-text-main);
     color: var(--color-text-main);
+    border-radius: 100px;
 }

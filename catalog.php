@@ -44,6 +44,15 @@
 <!--    -->
 <!--    }-->
 <!--    ></style>-->
+
+    <!--    aos js-->
+    <!--    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="aos.css">
+    <!--    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>-->
+    <script defer>
+        AOS.init();
+    </script>
+    <link rel="stylesheet" href="css/global.css">
 </head>
 <body>
 
@@ -67,7 +76,7 @@
     </section>
 
     <div class="container catalog-wrapper">
-        <aside class="catalog-sidebar" style="transform-origin: left top;scale: 0.9;">
+        <aside class="catalog-sidebar" style="transform-origin: left top;scale: 0.9;margin-top: 80px;">
             <form id="filter-form" action="#" method="get">
 
                 <!-- Блок ЦЕНА -->
@@ -261,7 +270,7 @@
 
 
 
-        <section class="catalog-main">
+        <section class="catalog-main" style="margin-top: 80px;">
             <div class="catalog-toolbar">
                 <p class="results-count">Найдено: 124 товара</p>
                 <div class="sorting">
@@ -274,7 +283,7 @@
                 </div>
             </div>
 
-            <div class="catalog-grid">
+            <div class="catalog-grid" style="margin-top: 80px;">
 
                 <?php
                         require_once 'lib/db.php';
@@ -282,10 +291,12 @@
                         $query = $pdo->prepare($sql);
                         $query->execute();
                         $products = $query->fetchAll(PDO::FETCH_OBJ);
+                // Создаем переменную для задержки с начальным значением 0
+                $delay = 0;
                         foreach ($products as $prod) {
                             echo
-                            '
-                                    <article class="product-card" style="height: auto; width: auto; border: none">
+                                    '
+                                    <article class="product-card" style="height: auto; width: auto; border: none" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="200" data-aos-delay="'.$delay.'">
                                             <div class="pc_logic">
                                                 <div>'.$prod->category.'</div>
                 
@@ -305,9 +316,17 @@
                 
                 
                                                 <div class="product-card__footer">
-                                                    <div class="product-card__tags">
-                                                        <span class="tag-small">'.$prod->tags.'</span>
-                                                        
+                                                    <div class="product-card__tags">';
+                            // Разбиваем строку тегов по разделителю (запятая)
+                            $tagsArray = explode(',', $prod->tags);
+                            // Проходим по каждому тегу и выводим его в отдельном контейнере
+                            foreach ($tagsArray as $tag) {
+                                $cleanTag = trim($tag);
+                                if (!empty($cleanTag)) {
+                                    echo '<span class="tag-small">' . htmlspecialchars($cleanTag) . '</span>';
+                                }
+                            }echo '
+
                                                     </div>
                                                     <div style="display: flex; flex-direction: row; gap: 10px; align-items: center;">
                                                     <button class="btn btn--primary btn--small add-to-cart-btn" onclick="CompareManager.add('.$prod->id.')" style="background: none; border: 1px solid var(--color-border); color: var(--color-dark)">Сравнить</button>
@@ -319,6 +338,8 @@
                                     </article>
 
                             ';
+                            // Увеличиваем задержку на 100 для следующей карточки
+                            $delay += 100;
                         }
                 ?>
             </div>
@@ -337,6 +358,10 @@
 </main>
 
 <?php include 'blocks/footer.php'; ?>
+<script src="aos.js"></script>
+<script>
+    AOS.init();
+</script>
 </body>
 </html>
 

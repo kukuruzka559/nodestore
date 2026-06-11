@@ -142,12 +142,12 @@ include 'blocks/header2.php';
                         </button>
                     <?php endforeach; ?>
                 </div>
-                <p>Объём постоянной памяти:</p>
-                <div class="config-options">
-                    <button class="config-btn" >128 гб</button>
-                    <button class="config-btn" >256 гб</button>
-                    <button class="config-btn" >512 гб</button>
-                </div>
+<!--                <p>Объём постоянной памяти:</p>-->
+<!--                <div class="config-options">-->
+<!--                    <button class="config-btn" >128 гб</button>-->
+<!--                    <button class="config-btn" >256 гб</button>-->
+<!--                    <button class="config-btn" >512 гб</button>-->
+<!--                </div>-->
 
                 <button class="wishlist-btn" style="position: absolute; left: 0px; top: 0px;" data-id="<?php echo $product['id']; ?>">♥</button>
             </div>
@@ -182,10 +182,12 @@ include 'blocks/header2.php';
             $query = $pdo->prepare($sql);
             $query->execute();
             $products = $query->fetchAll(PDO::FETCH_OBJ);
+            // Создаем переменную для задержки с начальным значением 0
+            $delay = 0;
             foreach ($products as $prod) {
                 echo
                         '
-                                    <article class="product-card" style="height: auto; width: auto; border: none">
+                                    <article class="product-card" style="height: auto; width: auto; border: none" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" data-aos-delay="'.$delay.'">
                                             <div class="pc_logic">
                                                 <div>'.$prod->category.'</div>
                 
@@ -205,9 +207,17 @@ include 'blocks/header2.php';
                 
                 
                                                 <div class="product-card__footer">
-                                                    <div class="product-card__tags">
-                                                        <span class="tag-small">'.$prod->tags.'</span>
-                                                        
+                                                    <div class="product-card__tags">';
+                // Разбиваем строку тегов по разделителю (запятая)
+                $tagsArray = explode(',', $prod->tags);
+                // Проходим по каждому тегу и выводим его в отдельном контейнере
+                foreach ($tagsArray as $tag) {
+                    $cleanTag = trim($tag);
+                    if (!empty($cleanTag)) {
+                        echo '<span class="tag-small">' . htmlspecialchars($cleanTag) . '</span>';
+                    }
+                }echo '
+
                                                     </div>
                                                     <div style="display: flex; flex-direction: row; gap: 10px; align-items: center;">
                                                     <button class="btn btn--primary btn--small add-to-cart-btn" onclick="CompareManager.add('.$prod->id.')" style="background: none; border: 1px solid var(--color-border); color: var(--color-dark)">Сравнить</button>
@@ -219,6 +229,8 @@ include 'blocks/header2.php';
                                     </article>
 
                             ';
+                // Увеличиваем задержку на 100 для следующей карточки
+                $delay += 100;
             }
             ?>
         </div>
@@ -341,51 +353,40 @@ include 'blocks/header2.php';
                             </div>
                         </div>
                         <div class="video-thumb">
-                            <div class="preview" style="background: url(backgrounds/Rectangle.png) no-repeat center / cover;">
+                            <div class="preview" style="background: url(backgrounds/qwer1.jpg) no-repeat center / cover;">
                                 <img src="icons/play.svg">
                                 <div class="youtube"><img src="icons/youtube.png" style="width: 10px; height: 10px;">YouTube</div>
                             </div>
 
                             <div class="descr">
-                                <div class="name">🔥 СМАРТФОН Nothing Phone (4a)</div>
-                                <div class="auth"><img src="icons/Ellipse.png" >Польза NET</div>
+                                <div class="name">НЕДЕЛЯ с Nothing Phone (4a) — правда о БРИТАНЦЕ за которую стыдно | ЧЕСТНЫЙ ОТЗЫВ</div>
+                                <div class="auth"><img src="icons/Ellipse.png" >Павел ХмурчикT</div>
                             </div>
                         </div>
                         <div class="video-thumb">
-                            <div class="preview" style="background: url(backgrounds/Rectangle.png) no-repeat center / cover;">
+                            <div class="preview" style="background: url(backgrounds/qwer2.jpg) no-repeat center / cover;">
                                 <img src="icons/play.svg">
                                 <div class="youtube"><img src="icons/youtube.png" style="width: 10px; height: 10px;">YouTube</div>
                             </div>
 
                             <div class="descr">
-                                <div class="name">🔥 СМАРТФОН Nothing Phone (4a)</div>
-                                <div class="auth"><img src="icons/Ellipse.png" >Польза NET</div>
-                            </div>
-                        </div>
-
-                        <div class="video-thumb">
-                            <div class="preview" style="background: url(backgrounds/Rectangle.png) no-repeat center / cover;">
-                                <img src="icons/play.svg">
-                                <div class="youtube"><img src="icons/youtube.png" style="width: 10px; height: 10px;">YouTube</div>
-                            </div>
-
-                            <div class="descr">
-                                <div class="name">🔥 СМАРТФОН Nothing Phone (4a)</div>
-                                <div class="auth"><img src="icons/Ellipse.png" >Польза NET</div>
+                                <div class="name">БАБКИ на СТОЛ и КАЙФУЙ! Или ПРОВАЛИВАЙ! Nothing Phone 4a - кто ЭТО покупает?</div>
+                                <div class="auth"><img src="icons/Ellipse.png" >i-shoppers</div>
                             </div>
                         </div>
 
                         <div class="video-thumb">
-                            <div class="preview" style="background: url(backgrounds/Rectangle.png) no-repeat center / cover;">
+                            <div class="preview" style="background: url(backgrounds/qwer3.jpg) no-repeat center / cover;">
                                 <img src="icons/play.svg">
                                 <div class="youtube"><img src="icons/youtube.png" style="width: 10px; height: 10px;">YouTube</div>
                             </div>
 
                             <div class="descr">
-                                <div class="name">🔥 СМАРТФОН Nothing Phone (4a)</div>
-                                <div class="auth"><img src="icons/Ellipse.png" >Польза NET</div>
+                                <div class="name">Nothing Phone 4a или iPhone 17e</div>
+                                <div class="auth"><img src="icons/Ellipse.png" >Romancev768</div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

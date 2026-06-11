@@ -1,6 +1,6 @@
 .top-products {
-    padding: 30px 0px 100px 0px;
-    margin: 80px 0px 0px 0px;
+    /*padding: 30px 0px 30px 0px;*/
+    margin: 200px 0px 200px 0px;
     position: relative;
 }
 
@@ -131,7 +131,11 @@
 
 .product-card__tags {
     display: flex;
-    gap: -3px;
+    /*gap: -3px;*/
+    gap: 4px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 162px;
 
 }
 

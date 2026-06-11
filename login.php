@@ -25,8 +25,8 @@
 
         <div class="auth-card">
             <div class="auth-tabs">
-                <button type="button" class="tab-btn">Телефон</button>
-                <button type="button" class="tab-btn tab-btn--active">Почта</button>
+                <button type="button" class="tab-btn tab-btn--active">Телефон</button>
+                <button type="button" class="tab-btn ">Почта</button>
             </div>
 
             <form action="lib/handle-login.php" method="POST" class="auth-form">
@@ -36,18 +36,22 @@
                 <div class="auth-social">
                     <p class="auth-social__title">Войти с помощью</p>
                     <div class="social-icons">
-                        <div class="social-box"></div>
-                        <div class="social-box"></div>
-                        <div class="social-box"></div>
-                        <div class="social-box"></div>
-                        <div class="social-box"></div>
-                        <div class="social-box"></div>
+                        <div class="social-box">
+                            <img src="icons/Google.svg">
+                        </div>
+                        <div class="social-box">
+                            <img src="icons/LogoApple.svg">
+                        </div>
+                        <div class="social-box">
+                            <img src="icons/Yandex.svg">
+                        </div>
+
                     </div>
                 </div>
 
                 <div class="auth-actions">
-                    <a href="register.php" class="btn btn--auth-secondary" style="display: flex; align-items: center; justify-content: center;">Регистрация</a>
-                    <button type="submit" class="btn btn--primary">Вход</button>
+                    <a href="register.php" class="btn btn--auth-secondary" style="display: flex; align-items: center; justify-content: center; border-radius: 100px; font-size: 24px;">Регистрация</a>
+                    <button type="submit" class="btn btn--primary" style="border-radius: 100px; font-size: 24px;">Вход</button>
 
                 </div>
             </form>

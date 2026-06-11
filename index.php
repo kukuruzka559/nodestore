@@ -48,28 +48,27 @@
 
 //        style="background: url(\'img/'.$workspaceprods1->img.'\') no-repeat center / contain;"
         ?>
-        <section class="hero" style="background: url(backgrounds/bg2.png) no-repeat center / cover;">
+<!--        <section class="hero" style="background: url(backgrounds/bg2.png) no-repeat center / cover;">-->
+            <section class="hero">
             <div class="container hero__inner">
                 <div class="hero__content">
                         <div class="hero3">
                             <div class="hero2" data-aos="fade-up">
                                 <div class="hero1">
                                     <h1 class="hero__title" >NOTHING PHONE 4A PRO</h1>
-                                    <p class="hero__desc">Lorem ipsum dolor sit amet consectetur. Egestas sem dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.</p>
+                                    <p class="hero__desc">Переосмысление мобильной эстетики. Культовый полупрозрачный дизайн, фирменная экосистема виджетов и идеальный баланс производительности. Ничего лишнего — только то, что действительно важно.</p>
                                 </div>
                                 <div class="hero__tags">
-                                    <span class="tag">Lorem ipsum</span>
-                                    <span class="tag">Lorem ipsum</span>
-                                    <span class="tag">Lorem ipsum</span>
-                                    <span class="tag">Lorem ipsum</span>
-                                    <span class="tag">Lorem ipsum</span>
-                                    <span class="tag">Lorem ipsum</span>
-                                    <span class="tag">Lorem ipsum</span>
+                                    <span class="tag">Glyph Interface</span>
+                                    <span class="tag">Прозрачный корпус</span>
+                                    <span class="tag">Nothing OS</span>
+                                    <span class="tag">120Hz AMOLED</span>
+                                    <span class="tag">50 Мп камера</span>
                                 </div>
                             </div>
 
                             <!--                        <span class="divider"> </span>-->
-                            <div class="divider"></div>
+                            <div class="divider" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500"></div>
 
                             <div class="hero4" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
                                 Обзоры
@@ -86,58 +85,47 @@
                                         </div>
                                     </div>
                                     <div class="video-thumb">
-                                        <div class="preview" style="background: url(backgrounds/Rectangle.png) no-repeat center / cover;">
+                                        <div class="preview" style="background: url(backgrounds/qwer1.jpg) no-repeat center / cover;">
                                             <img src="icons/play.svg">
                                             <div class="youtube"><img src="icons/youtube.png" style="width: 10px; height: 10px;">YouTube</div>
                                         </div>
 
                                         <div class="descr">
-                                            <div class="name">🔥 СМАРТФОН Nothing Phone (4a)</div>
-                                            <div class="auth"><img src="icons/Ellipse.png" >Польза NET</div>
+                                            <div class="name">НЕДЕЛЯ с Nothing Phone (4a) — правда о БРИТАНЦЕ за которую стыдно | ЧЕСТНЫЙ ОТЗЫВ</div>
+                                            <div class="auth"><img src="icons/Ellipse.png" >Павел ХмурчикT</div>
                                         </div>
                                     </div>
                                     <div class="video-thumb">
-                                        <div class="preview" style="background: url(backgrounds/Rectangle.png) no-repeat center / cover;">
+                                        <div class="preview" style="background: url(backgrounds/qwer2.jpg) no-repeat center / cover;">
                                             <img src="icons/play.svg">
                                             <div class="youtube"><img src="icons/youtube.png" style="width: 10px; height: 10px;">YouTube</div>
                                         </div>
 
                                         <div class="descr">
-                                            <div class="name">🔥 СМАРТФОН Nothing Phone (4a)</div>
-                                            <div class="auth"><img src="icons/Ellipse.png" >Польза NET</div>
-                                        </div>
-                                    </div>
-
-                                    <div class="video-thumb">
-                                        <div class="preview" style="background: url(backgrounds/Rectangle.png) no-repeat center / cover;">
-                                            <img src="icons/play.svg">
-                                            <div class="youtube"><img src="icons/youtube.png" style="width: 10px; height: 10px;">YouTube</div>
-                                        </div>
-
-                                        <div class="descr">
-                                            <div class="name">🔥 СМАРТФОН Nothing Phone (4a)</div>
-                                            <div class="auth"><img src="icons/Ellipse.png" >Польза NET</div>
+                                            <div class="name">БАБКИ на СТОЛ и КАЙФУЙ! Или ПРОВАЛИВАЙ! Nothing Phone 4a - кто ЭТО покупает?</div>
+                                            <div class="auth"><img src="icons/Ellipse.png" >i-shoppers</div>
                                         </div>
                                     </div>
 
                                     <div class="video-thumb">
-                                        <div class="preview" style="background: url(backgrounds/Rectangle.png) no-repeat center / cover;">
+                                        <div class="preview" style="background: url(backgrounds/qwer3.jpg) no-repeat center / cover;">
                                             <img src="icons/play.svg">
                                             <div class="youtube"><img src="icons/youtube.png" style="width: 10px; height: 10px;">YouTube</div>
                                         </div>
 
                                         <div class="descr">
-                                            <div class="name">🔥 СМАРТФОН Nothing Phone (4a)</div>
-                                            <div class="auth"><img src="icons/Ellipse.png" >Польза NET</div>
+                                            <div class="name">Nothing Phone 4a или iPhone 17e</div>
+                                            <div class="auth"><img src="icons/Ellipse.png" >Romancev768</div>
                                         </div>
                                     </div>
+                                    
                                 </div>
                             </div>
 
                         </div>
 <!--                    data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500"-->
                         <div class="hero__cta">
-                            <a href="/catalog.php"><button class="btn btn--outline" style="color: var(--color-bg); border-color: var(--color-bg); border-radius: 100px; width: 310px" >Каталог</button></a>
+                            <a href="/catalog.php"><button class="btn btn--outline" style="color: var(--color-dark); border-color: var(--color-dark); border-radius: 100px; width: 310px" >Каталог</button></a>
 
                             <a href="/product.php"><button class="btn btn--primary" style="border-radius: 100px;" >Перейти к товару</button></a>
 
@@ -151,6 +139,9 @@
 
                 </div>
             </div>
+                <div style="display: flex; justify-content: center; align-items: center">
+                    <img src="icons/qwer.svg">
+                </div>
         </section>
 
 
@@ -164,10 +155,12 @@
                     $query = $pdo->prepare($sql);
                     $query->execute();
                     $products = $query->fetchAll(PDO::FETCH_OBJ);
+                    // Создаем переменную для задержки с начальным значением 0
+                    $delay = 0;
                     foreach ($products as $prod) {
                         echo
                                 '
-                                    <article class="product-card" style="height: auto; width: auto; border: none">
+                                    <article class="product-card" style="height: auto; width: auto; border: none" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" data-aos-delay="'.$delay.'">
                                             <div class="pc_logic">
                                                 <div>'.$prod->category.'</div>
                 
@@ -187,9 +180,17 @@
                 
                 
                                                 <div class="product-card__footer">
-                                                    <div class="product-card__tags">
-                                                        <span class="tag-small">'.$prod->tags.'</span>
-                                                        
+                                                    <div class="product-card__tags">';
+                                                        // Разбиваем строку тегов по разделителю (запятая)
+                                                        $tagsArray = explode(',', $prod->tags);
+                                                        // Проходим по каждому тегу и выводим его в отдельном контейнере
+                                                        foreach ($tagsArray as $tag) {
+                                                            $cleanTag = trim($tag);
+                                                            if (!empty($cleanTag)) {
+                                                                echo '<span class="tag-small">' . htmlspecialchars($cleanTag) . '</span>';
+                                                            }
+                                                        }echo '
+
                                                     </div>
                                                     <div style="display: flex; flex-direction: row; gap: 10px; align-items: center;">
                                                     <button class="btn btn--primary btn--small add-to-cart-btn" onclick="CompareManager.add('.$prod->id.')" style="background: none; border: 1px solid var(--color-border); color: var(--color-dark)">Сравнить</button>
@@ -201,6 +202,8 @@
                                     </article>
 
                             ';
+                        // Увеличиваем задержку на 100 для следующей карточки
+                        $delay += 100;
                     }
                     ?>
                 </div>
@@ -213,6 +216,16 @@
             <div class="container_work">
 
                 <div class="workspace_img_container">
+
+                    <img src="icons/Ellipseactive.png" style="position: absolute; left: 1330px; bottom: 260px; width: 30px">
+                    <img src="icons/Ellipse1.png" style="position: absolute;     left: 440px;
+    bottom: 400px; width: 30px">
+                    <img src="icons/Ellipse1.png" style="position: absolute; left: 1200px;
+    bottom: 90px; width: 30px">
+                    <img src="icons/Ellipse1.png" style="position: absolute; left: 730px;
+    bottom: 90px; width: 30px">
+                    <img src="icons/Ellipse1.png" style="position: absolute;     left: 990px;
+    bottom: 820px; width: 30px">
 
 
                     <div class="workspace__descr">
@@ -396,7 +409,7 @@
                                 <h3>Собери компик так как тебе нужно без переплаты</h3>
                             </div>
 
-                            <button class="btn btn--primary" style="border-radius: 100px; font-size: 18px; min-width: fit-content;">создать сборку</button>
+                            <button class="btn btn--primary" style="border-radius: 100px; font-size: 18px; min-width: fit-content; color: var(--color-dark); border: 1px solid var(--color-dark); border-radius: 100px; width: 310px; background: none ">создать сборку</button>
                         </div>
 
 
@@ -430,7 +443,9 @@
 
                         <div class="config-footer">
                             <div class="price-value" id="activeBuildPrice">$0.00</div>
-                            <a href="#" id="activeBuildLink" class="btn btn-orange-outline">Смотреть</a>
+                            <div style="display: flex; flex-direction: row; gap: 20px"></div>
+                            <a href="#" id="activeBuildLink" class="btn btn--outline" style="color: var(--color-dark); border-color: var(--color-dark); border-radius: 100px;  font-size: 18px">Смотреть</a>
+                            <button class="btn btn--primary" style="font-size: 18px; border-radius: 100px;">В корзину</button>
                         </div>
                     </div>
 
@@ -438,23 +453,23 @@
 <!--            </div>-->
         </section>
 
-        <section class="sponsors">
-            <div class="container">
-                <p class="sponsors__title">Наши партнёры</p>
-                <div class="sponsors__list">
-                    <div class="sponsor-box"></div>
-                    <div class="sponsor-box"></div>
-                    <div class="sponsor-box"></div>
-                    <div class="sponsor-box"></div>
-                    <div class="sponsor-box"></div>
-                    <div class="sponsor-box"></div>
-                    <div class="sponsor-box"></div>
-                    <div class="sponsor-box"></div>
-                    <div class="sponsor-box"></div>
-                    <div class="sponsor-box"></div>
-                </div>
-            </div>
-        </section>
+<!--        <section class="sponsors">-->
+<!--            <div class="container">-->
+<!--                <p class="sponsors__title">Наши партнёры</p>-->
+<!--                <div class="sponsors__list">-->
+<!--                    <div class="sponsor-box"></div>-->
+<!--                    <div class="sponsor-box"></div>-->
+<!--                    <div class="sponsor-box"></div>-->
+<!--                    <div class="sponsor-box"></div>-->
+<!--                    <div class="sponsor-box"></div>-->
+<!--                    <div class="sponsor-box"></div>-->
+<!--                    <div class="sponsor-box"></div>-->
+<!--                    <div class="sponsor-box"></div>-->
+<!--                    <div class="sponsor-box"></div>-->
+<!--                    <div class="sponsor-box"></div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
 
 
 

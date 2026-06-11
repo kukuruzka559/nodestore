@@ -29,7 +29,7 @@
     font-weight: bold;
     margin-bottom: 20px;
     letter-spacing: 1px;
-    color: var(--color-bg);
+    /*color: var(--color-bg);*/
 }
 
 .hero__desc {

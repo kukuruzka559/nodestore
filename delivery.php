@@ -15,9 +15,9 @@
 <?php include 'blocks/header.php'; ?>
 
 <main class="info-page">
-    <div class="container">
+    <div class="container" style="margin-top: 80px;">
         <header class="page-header">
-            <h1 class="page-title">Доставка и оплата</h1>
+            <h1>Доставка и оплата</h1>
             <p class="page-subtitle">Прозрачные условия для тех, кто ценит технику.</p>
         </header>
 

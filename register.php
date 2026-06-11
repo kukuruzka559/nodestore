@@ -37,18 +37,21 @@
                 <div class="auth-social">
                     <p class="auth-social__title">Войти с помощью</p>
                     <div class="social-icons">
-                        <div class="social-box"></div>
-                        <div class="social-box"></div>
-                        <div class="social-box"></div>
-                        <div class="social-box"></div>
-                        <div class="social-box"></div>
-                        <div class="social-box"></div>
+                        <div class="social-box">
+                            <img src="icons/Google.svg">
+                        </div>
+                        <div class="social-box">
+                            <img src="icons/LogoApple.svg">
+                        </div>
+                        <div class="social-box">
+                            <img src="icons/Yandex.svg">
+                        </div>
                     </div>
                 </div>
 
                 <div class="auth-actions">
-                    <a href="login.php" class="btn btn--auth-secondary" style="display: flex; align-items: center; justify-content: center;">Вход</a>
-                    <button type="submit" class="btn btn--primary">Зарегистрироваться</button>
+                    <a href="login.php" class="btn btn--auth-secondary" style="display: flex; align-items: center; justify-content: center; border-radius: 100px; font-size: 24px;">Вход</a>
+                    <button type="submit" class="btn btn--primary" style="border-radius: 100px; ">Зарегистрироваться</button>
                 </div>
             </form>
         </div>
