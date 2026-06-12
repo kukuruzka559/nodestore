@@ -24,11 +24,15 @@ if (!empty($cart_counts)) {
 // Парсим избранное
 $fav_items = array_filter(explode(',', $user['favorites'] ?? ''));
 $fav_products = [];
+$fav_products1 = [];
 if (!empty($fav_items)) {
     $in = str_repeat('?,', count($fav_items) - 1) . '?';
+    $fav_products1 = array_filter(explode(',', $user['favorites'] ?? ''));
     $stmt = $pdo->prepare("SELECT * FROM products WHERE id IN ($in)");
     $stmt->execute($fav_items);
     $fav_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//    print_r($fav_products[0]);
+//    print_r($fav_items);
 }
 
 // Получаем заказы пользователя
@@ -57,15 +61,20 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <script src="js/favorites.js" defer></script>
     <script src="js/cart.js" defer></script>
+
+
 </head>
 <body>
 <?php include 'blocks/header.php'; ?>
+<?php require_once 'lib/functions.php'; ?>
 
-<h1 class="auth-title"><?= htmlspecialchars($email) ?></h1>
+<!--<h1 class="auth-title">--><?php //= htmlspecialchars($email) ?><!--</h1>-->
+<h1 class="auth-title"><?= formatText($email) ?></h1>
 
 <main class="profile-page">
     <div class="container">
-        <h1 class="profile-title">Личный кабинет</h1>
+        <h1 class="profile-title">Личный кабинет <?= formatText($email) ?></h1>
+
         <!-- Разместить в блоке с заголовком профиля -->
         <div class="profile-header-actions">
             <a href="lib/logout.php" class="btn btn--outline btn--small">Выйти из аккаунта</a>
@@ -101,7 +110,7 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 </div>
                                 <div style="display:flex; justify-content: space-between; width: 100%;">
                                     <p><?= $order['order_date'] ?></p>
-                                    <p class="order-price">$<?= number_format($order['priceforone'] * $order['count'], 2) ?></p>
+                                    <p class="order-price"><?= number_format($order['priceforone'] * $order['count'], 2) ?> руб.</p>
                                 </div>
                             </div>
                         </div>
@@ -123,20 +132,17 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="profile-products fav-list">
                     <?php foreach($fav_products as $prod): ?>
                         <article class="product-card fav-item" data-id="<?= $prod['id'] ?>">
-<!--                            <div class="card-checkbox-wrapper">-->
-<!--                                <input type="checkbox" class="fav-checkbox" value="--><?php //= $prod['id'] ?><!--">-->
                             <button class="wishlist-btn active" data-id="<?= $prod['id'] ?>" style="position: absolute; left: 20px; top: 20px">❤️</button>
-<!--                            </div>-->
                             <div class="product-card__img-placeholder" style="background: url('img/<?= $prod['img'] ?>') no-repeat center / contain;"></div>
 
                             <div class="profile-prod-wraper">
                                 <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-end;">
-                                    <h3 class="product-card__title"><?= htmlspecialchars($prod['name']) ?></h3>
-                                    <small><?= htmlspecialchars($prod['category']) ?></small>
+                                    <h3 class="product-card__title"><?= formatText($prod['name']); ?></h3>
+                                    <small><?= formatText($prod['category']); ?></small>
                                 </div>
 
                                 <div class="product-card__footer">
-                                    <span class="product-card__price">$<?= $prod['price'] ?></span>
+                                    <span class="product-card__price"><?= priceFormat($prod['price']); ?></span>
                                     <button class="btn btn--primary btn--small" data-id="'.$prod->id.'">В корзину</button>
                                 </div>
                             </div>
@@ -196,5 +202,9 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <?php include 'blocks/footer.php'; ?>
 <script src="js/profile.js"></script> <!-- Подключение скрипта -->
+<script>
+    // Обращаемся к нулевому индексу массива и выводим имя объекта
+    console.log('Данные из PHP (Первый товар в избранном): "<?php echo htmlspecialchars($fav_items[0]); ?>"');
+</script>
 </body>
 </html>

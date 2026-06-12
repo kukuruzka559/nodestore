@@ -31,12 +31,11 @@ $specs = $specData['specs'] ?? [];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--    <title>--><?php //echo $productName; ?><!-- - Купить</title>-->
-    <title>Nothing Phone 4a</title>
+    <title><?php echo htmlspecialchars($product['name']); ?> — Купить</title>
+
 
     <link rel="stylesheet" href="css/product.css">
 
-    <!--    <link rel="stylesheet" href="css/global.css">-->
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/top-products.css">
@@ -66,16 +65,9 @@ $productName = "Nothing Phone 4a";
 $productDesc = "Продолжение легендарной линейки с обновленным глиф-интерфейсом и сбалансированной производительностью.";
 ?>
 
-<?php
-include 'blocks/header2.php';
-?>
+<?php include 'blocks/header2.php'; ?>
 <main class="product-page">
-    <!--    <div class="container">-->
-
-    <!-- БЛОК 1: HERO (ФОТО И КУПИТЬ) -->
     <section class="product-hero">
-
-        <!-- Слева: Квадраты с превью -->
         <div class="hero-thumbnails">
             <?php
             // Собираем все фото из всех цветов в один список для слайдера
@@ -89,11 +81,8 @@ include 'blocks/header2.php';
             ?>
 
         </div>
-
-        <!--            tyle="background: url(nothing_phone_4_a/nf4amain.png) no-repeat center / contain;"-->
         <div class="hero-main-image">
             <?php
-            // Получаем первый ключ массива media для PHP 7.1
             reset($media);
             $firstColor = key($media);
 
@@ -105,27 +94,8 @@ include 'blocks/header2.php';
             <img src="<?php echo $defaultImg; ?>" id="mainProductImg" alt="">
         </div>
 
-        <!-- Справа снизу: Конфигурация (через CSS positioning внутри грида) -->
-<!--        <div class="hero-buy-block">-->
-<!--            <div class="config-selection">-->
-<!--                <p class="config-label">Выберите конфигурацию</p>-->
-<!--                <div class="config-options">-->
-<!--                    <button class="config-btn active">8/128 GB</button>-->
-<!--                    <button class="config-btn">12/256 GB</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="buy-actions">-->
-<!--                <div class="price">$499.00</div>-->
-<!--                <div style="display: flex; flex-direction: row; gap: 20px">-->
-<!--                    <button class="btn btn-outline">В сравнение</button>-->
-<!--                    <button class="btn btn-orange">В корзину</button>-->
-<!--                </div>-->
-<!---->
-<!--            </div>-->
-<!--        </div>-->
 
         <div class="hero-buy-block">
-<!--            <h1 class="section-title">--><?php //echo $product['name']; ?><!--</h1>-->
             <div class="config-selection">
                 <p>Выберите цвет:</p>
                 <div style="display: flex; flex-direction: row; gap: 20px; justify-content: left">
@@ -142,34 +112,21 @@ include 'blocks/header2.php';
                         </button>
                     <?php endforeach; ?>
                 </div>
-<!--                <p>Объём постоянной памяти:</p>-->
-<!--                <div class="config-options">-->
-<!--                    <button class="config-btn" >128 гб</button>-->
-<!--                    <button class="config-btn" >256 гб</button>-->
-<!--                    <button class="config-btn" >512 гб</button>-->
-<!--                </div>-->
 
                 <button class="wishlist-btn" style="position: absolute; left: 0px; top: 0px;" data-id="<?php echo $product['id']; ?>">♥</button>
             </div>
 
             <div class="price-big"><?php echo $product['price']; ?> руб.</div>
 
-
-
             <div class="product-actions">
-
-
                 <button class="btn btn-outline" onclick="CompareManager.add('.$prod->id.')" style="background: none; border: 1px solid var(--color-border); color: var(--color-dark); font-size: 24px; border-radius: 100px">Сравнить</button>
                 <button class="btn btn-outline" data-id="<?php echo $product['id']; ?>" style="font-size: 24px; background: var(--color-primary); border-radius: 100px; border: none">В корзину</button>
             </div>
         </div>
-
-        <!-- Слева снизу: Название и описание -->
         <div class="hero-info">
-            <h1 class="product-title"><?php echo $productName; ?></h1>
-            <p class="product-description"><?php echo $productDesc; ?></p>
+            <h1 class="product-title"><?php echo htmlspecialchars($product['name']); ?></h1>
+            <p class="product-description"><?php echo htmlspecialchars($product['description']); ?></p>
         </div>
-
     </section>
 
     <!-- БЛОК 2: ПОХОЖИЕ ТОВАРЫ -->

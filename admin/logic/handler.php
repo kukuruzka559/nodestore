@@ -39,7 +39,7 @@ switch($action) {
         if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
             $tmpPath = $_FILES['image']['tmp_name'];
             $fileName = time() . '_' . basename($_FILES['image']['name']);
-            // Сохраняем в папку img в корне сайта. Убедись, что у папки есть права на запись!
+            // Сохраняем в папку img в корне сайта.
             $uploadPath = '../../img/' . $fileName;
 
             if (move_uploaded_file($tmpPath, $uploadPath)) {

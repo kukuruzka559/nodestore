@@ -33,3 +33,20 @@ $sql = 'INSERT INTO users (username, email, password) VALUES (?, ?, ?)';
 $query = $pdo->prepare($sql);
 $query->execute([$username, $email, $password]);
 header("Location: /index.php");
+
+// Настройка параметров письма
+$to = $email;
+$subject = 'Добро пожаловать в NODESTORE!';
+$message = "Здравствуйте, $username!\n\nСпасибо за регистрацию на нашем сайте. Ваш аккаунт успешно создан.";
+
+// Настройка заголовков (кодировка, отправитель)
+$headers = "From: noreply@nodestore.com\r\n";
+$headers .= "Reply-To: support@nodestore.com\r\n";
+$headers .= "Content-Type: text/plain; charset=utf-8\r\n";
+
+// Отправка письма
+if (mail($to, $subject, $message, $headers)) {
+    // Письмо отправлено успешно
+} else {
+    // Логирование ошибки отправки
+}
